@@ -4,17 +4,17 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="#101010" name="theme-color"/>
-<meta content="Ricsi a HÖK-ért – weboldal-vázlat Lorem ipsum szöveggel." name="description"/>
+<meta content="#090909" name="theme-color"/>
+<meta content="Ricsi a HÖK-ért – hallgatói kampányoldal a Gábor Dénes Egyetemen." name="description"/>
 <meta content="website" property="og:type"/>
-<meta content="Ricsi a HÖK-ért | Weboldal-vázlat" property="og:title"/>
-<meta content="Kampányoldal látványterv, ideiglenes helykitöltő szövegekkel." property="og:description"/>
+<meta content="Ricsi a HÖK-ért | GDE hallgatói kampány" property="og:title"/>
+<meta content="Hallgatói érdekképviselet, eHÖK, digitalizáció és közösség." property="og:description"/>
 <meta content="assets/social-preview.webp" property="og:image"/>
 <meta content="dark" name="color-scheme"/>
-<title>Ricsi a HÖK-ért | Weboldal-vázlat</title>
+<title>Ricsi a HÖK-ért | GDE hallgatói kampány</title>
 <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link as="image" href="assets/hero-campus.webp" media="(min-width: 801px)" rel="preload"/>
-<link as="image" href="assets/hero-comic.webp" media="(max-width: 800px)" rel="preload"/>
+<link as="image" href="assets/campus-brown.webp" media="(min-width: 801px)" rel="preload"/>
+<link as="image" href="assets/campus-maroon.webp" media="(max-width: 800px)" rel="preload"/>
 <!-- Set the current theme before CSS is parsed to avoid flashing the wrong palette. -->
 <script src="config.js"></script>
 <script src="theme.js"></script>
@@ -22,51 +22,53 @@
 <link href="themes.css" rel="stylesheet"/>
 <link href="halloween-decor.css" rel="stylesheet"/>
 <link href="sections.css" rel="stylesheet"/>
+<link href="gta.css?v=2" rel="stylesheet"/>
 <script defer src="script.js"></script>
+<script defer src="gta.js?v=2"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Ugrás a tartalomhoz</a>
-<aside aria-label="Szerkesztési állapot" class="draft-strip" id="draft-strip">WEBOLDAL-VÁZLAT  /  A SZÖVEGEK IDEIGLENESEK</aside><header class="site-header" id="top">
-<div class="header-inner container">
-<a aria-label="Ricsi a HÖK-ért – főoldal" class="brand" href="#top">
-<span aria-hidden="true" class="brand-mark"><svg fill="none" viewbox="0 0 48 48"><path d="M24 2 45 13v23L24 47 3 36V13L24 2Z" fill="#ff7a00"></path><path d="M24 2v45M3 13l21 11 21-11M14 16l10-5 10 5-10 5-10-5Z" stroke="#111" stroke-linejoin="round" stroke-width="3"></path><path d="m31 33 4 4 7-9" stroke="#111" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.4"></path></svg></span>
-<span class="brand-name">Ricsi <em>a HÖK-ért</em></span>
-</a>
-<button aria-controls="primary-nav" aria-expanded="false" aria-label="Menü megnyitása" class="menu-toggle" id="menu-toggle" type="button"><span></span><span></span><span></span></button>
-<nav aria-label="Fő navigáció" class="primary-nav" id="primary-nav">
-<a href="#rolam">Rólam</a>
-<a href="#programom">Programom</a>
-<a href="#megjelenesek">Megjelenések</a>
-<a href="#csapatom">Csapatom</a>
-<a href="#galeria">Galéria</a>
-<a href="#kapcsolat">Kapcsolat</a>
-<a class="nav-cta" href="#kapcsolat">Támogass <span aria-hidden="true">›</span></a>
-</nav>
-</div>
+<aside aria-label="Szerkesztési állapot" class="draft-strip" id="draft-strip">KAMPÁNYOLDAL / A RÉSZLETES SZÖVEGEK MÉG SZERKESZTÉS ALATT</aside><header class="site-header gta-header" id="top">
+  <div class="header-inner container">
+    <a class="brand gta-brand" href="#fooldal" aria-label="Ricsi a HÖK-ért – Főoldal">Ricsi <em>a HÖK-ért</em></a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Menü megnyitása"><span></span><span></span><span></span></button>
+    <nav class="primary-nav gta-top-nav" id="primary-nav" aria-label="Fő navigáció">
+      <a href="#fooldal" class="is-current">Főoldal</a>
+      <a href="#miert-en">Miért indulok?</a>
+      <a href="#programom">Programom</a>
+      <a href="#megjelenesek">Eddigi munkám</a>
+      <a href="#csapatom">Csapatom</a>
+      <a href="#galeria">Galéria</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+    </nav>
+    <button class="gta-halloween-button" id="halloween-toggle" type="button" aria-pressed="false" aria-label="Halloween mód bekapcsolása"><span aria-hidden="true">☠</span><span>Halloween</span></button>
+  </div>
 </header>
 <div class="halloween-night-strip halloween-only" aria-hidden="true"><img src="assets/jack-o-lantern.svg" alt=""><span>HALLOWEEN EDITION</span><img src="assets/bat-swarm.svg" alt=""><span>OCT 20 — NOV 02</span><img src="assets/ghost-white.svg" alt=""></div>
 <main id="main">
-<section aria-labelledby="hero-title" class="hero">
-<div class="hero-halloween-layer halloween-only" aria-hidden="true">
- <img class="hero-halloween-web" src="assets/spiderweb-bright.svg" alt="">
- <img class="hero-halloween-bats" src="assets/bat-swarm.svg" alt="">
- <img class="hero-halloween-pumpkin" src="assets/jack-o-lantern.svg" alt="">
- <img class="hero-halloween-ghost" src="assets/ghost-white.svg" alt="">
-</div>
-<div aria-hidden="true" class="seasonal-decor"><img alt="" class="bat bat-one" loading="lazy" src="assets/bat.svg"/><img alt="" class="bat bat-two" loading="lazy" src="assets/bat.svg"/><span class="seasonal-moon"></span></div>
-<div aria-label="Illusztrált kampánykép: hallgatók a Gábor Dénes Egyetemen és a HÖK-jelölt" class="hero-art" role="img"></div>
-<div aria-label="HÖK szavazólap egy urnában" class="hero-vote" role="img"></div>
-<div class="hero-copy container">
-<div class="hero-copy-inner">
-<p class="eyebrow">GDE  /  LOREM IPSUM <span aria-hidden="true" class="season-pill">HALLOWEEN EDITION</span></p>
-<h1 id="hero-title">Lorem ipsum.<span>Dolor sit amet.</span></h1>
-<p class="hero-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non risus a lorem fermentum facilisis. Suspendisse potenti.</p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="#rolam">Ismerj meg <span aria-hidden="true">›</span></a>
-<a class="btn btn-outline" href="#programom">Programom <span aria-hidden="true">›</span></a>
-</div>
-</div>
-</div>
+<section class="gta-landing" id="fooldal" aria-labelledby="hero-title">
+  <div class="gta-background" aria-hidden="true"></div>
+  <div class="gta-grain" aria-hidden="true"></div>
+  <div class="gta-home-layout container">
+    <div class="gta-menu-wrap">
+      <p class="gta-chapter">GÁBOR DÉNES EGYETEM / HALLGATÓI KAMPÁNY</p>
+      <h1 id="hero-title">Ricsi <span>a HÖK-ért</span></h1>
+      <p class="gta-intro">Hallgatói érdekképviselet új lendülettel. eHÖK, digitalizáció és valódi hallgatói visszajelzések.</p>
+      <nav class="gta-side-menu" aria-label="Kampány fejezetei">
+        <a href="#miert-en" class="gta-selected">Folytatás <span aria-hidden="true">▶</span></a>
+        <a href="#miert-en">Miért indulok?</a>
+        <a href="#programom">Programom</a>
+        <a href="#megjelenesek">Eddigi munkám</a>
+        <a href="#csapatom">Csapatom</a>
+        <a href="#galeria">Galéria</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+      </nav>
+    </div>
+  </div>
+  <div class="gta-bottom-hud">
+    <span>GDE HÖK / FÜGGETLEN HALLGATÓI KAMPÁNY</span>
+    <div><span><kbd>ENTER</kbd> Kiválasztás</span><span><kbd>ESC</kbd> Vissza</span></div>
+  </div>
 </section>
 <section aria-labelledby="why-title" class="why section-border" id="miert-en">
 <div class="container why-grid">
@@ -113,12 +115,7 @@
 </div>
 </div>
 </section>
-<section aria-labelledby="about-title" class="about section-border" id="rolam">
-<div class="container about-grid">
-<div class="about-image"><img class="halloween-about-ghost halloween-only" src="assets/ghost-white.svg" alt="" aria-hidden="true"/><img alt="Ricsi illusztrált portréja a Gábor Dénes Egyetem épülete előtt" decoding="async" loading="eager" src="assets/campus-maroon.webp"/><span class="about-sticker">LOREM • IPSUM • DOLOR</span></div>
-<div class="about-copy"><p class="section-kicker">03 / ISMERJ MEG</p><h2 class="brush-heading" id="about-title">Lorem ipsum dolor.</h2><p class="about-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in justo sed sapien vehicula maximus at in lorem.</p><p>Praesent dictum, lorem vitae sodales congue, libero turpis dictum dui, at blandit nibh tortor non nibh. Nulla facilisi. Vivamus ut sapien magna.</p><a class="text-link" href="#kapcsolat">Van ötleted? Beszéljünk róla <span aria-hidden="true">↗</span></a></div>
-</div>
-</section>
+
 <!-- GDE/community mentions: cards and links are populated from config.js. -->
 <section class="press section-border" id="megjelenesek" aria-labelledby="press-title">
   <div class="container">

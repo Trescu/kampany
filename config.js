@@ -11,10 +11,10 @@
 window.CAMPAIGN_CONFIG = {
   // Automatic theme: Halloween every year from October 20 through November 2.
   // "auto" | "halloween" | "classic". Use ?theme=classic / ?theme=halloween to preview.
-  theme: { mode: "auto", halloweenFrom: "10-20", halloweenThrough: "11-02", timeZone: "Europe/Budapest" },
+  theme: { mode: "classic", halloweenFrom: "10-20", halloweenThrough: "11-02", timeZone: "Europe/Budapest" },
   contactEmail: "",
   contactSubject: "Hallgatói javaslat – HÖK kampány",
-  siteUrl: "",
+  siteUrl: "https://dumitrescu.hu",
   voteUrl: "",
   socialLinks: {
     instagram: "",
