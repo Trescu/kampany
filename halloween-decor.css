@@ -1,0 +1,110 @@
+/* v1.4 — visible, intentional seasonal illustrated decorations.
+   Completely hidden in classic mode; all artwork is local SVG. */
+.halloween-only { display: none !important; }
+html[data-theme="halloween"] .halloween-only { display: block !important; }
+html[data-theme="halloween"] .halloween-night-strip {
+  display: flex !important; align-items: center; justify-content: center; gap: clamp(10px, 2.5vw, 32px);
+  min-height: 43px; overflow: hidden; position: relative; z-index: 1;
+  background: linear-gradient(90deg,#170c1b,#35141e 32%,#3a190f 53%,#210e20 76%,#150b16);
+  border-bottom: 1px solid #ffae5a83; box-shadow: inset 0 1px #ffbc6340, inset 0 -1px #0a090d;
+  color: #ffcf85; font-size: clamp(.61rem,.86vw,.72rem); font-weight: 850; letter-spacing: .22em;
+}
+html[data-theme="halloween"] .halloween-night-strip img { height: 36px; width: 45px; object-fit: contain; flex: 0 0 auto; }
+html[data-theme="halloween"] .halloween-night-strip img:nth-of-type(2) { width: 95px; height: 40px; }
+html[data-theme="halloween"] .halloween-night-strip img:nth-of-type(3) { height: 35px; width: 37px; }
+html[data-theme="halloween"] .site-header { border-bottom-color: #ff8b414f; }
+html[data-theme="halloween"] .hero { border-bottom: 3px solid #ee6916; }
+html[data-theme="halloween"] .hero-halloween-layer {
+  display: block !important; position: absolute; inset: 0; pointer-events: none; z-index: 2;
+}
+html[data-theme="halloween"] .hero-halloween-layer img { position: absolute; object-fit: contain; height: auto; user-select: none; }
+html[data-theme="halloween"] .hero-halloween-web { top: -7px; right: -6px; width: clamp(142px,16vw,235px); opacity: .91; filter: drop-shadow(0 0 4px #ffc57c40); }
+html[data-theme="halloween"] .hero-halloween-bats { top: 5px; left: 31%; width: clamp(110px, 12vw, 180px); opacity: .95; transform: rotate(-7deg); filter: drop-shadow(0 0 4px #e0732069); }
+html[data-theme="halloween"] .hero-halloween-pumpkin { bottom: -14px; left: .3%; width: clamp(112px, 12vw, 184px); filter: drop-shadow(0 0 13px #ff830096); transform: rotate(-6deg); }
+html[data-theme="halloween"] .hero-halloween-ghost { top: 34%; right: .3%; width: clamp(100px, 10vw, 158px); filter: drop-shadow(0 0 15px #f9d6ff94); animation: ghost-bob 5s ease-in-out infinite; }
+html[data-theme="halloween"] .hero-copy { position: relative; z-index: 3; }
+html[data-theme="halloween"] .hero h1 span { color: #ff8b21; text-shadow: 3px 3px 0 #16040a, 0 0 35px #e66f222b; }
+html[data-theme="halloween"] .hero-art { filter: saturate(1.18); }
+html[data-theme="halloween"] .why, html[data-theme="halloween"] .gallery, html[data-theme="halloween"] .about, html[data-theme="halloween"] .program { position: relative; isolation: isolate; }
+html[data-theme="halloween"] .why::before { content:''; position:absolute; top:0; right:0; width: clamp(110px, 16vw, 250px); height: clamp(110px, 16vw, 250px); opacity:.55; background: url('assets/spiderweb-bright.svg') right top /contain no-repeat; pointer-events:none; z-index:-1; }
+html[data-theme="halloween"] .value-card { border-color: #ffab664b; box-shadow: inset 0 0 0 1px #ffac2210, 0 8px 28px #0008; }
+html[data-theme="halloween"] .value-card:hover { border-color:#ffca7d; box-shadow: 0 0 18px #ff741746; }
+html[data-theme="halloween"] .halloween-break {
+  display: flex !important; gap: 18px; align-items: center; justify-content: center;
+  height: 69px; background: repeating-linear-gradient(120deg,#210e1d 0 9px,#26111f 10px 13px,#1a0c18 13px 28px);
+  border-top:1px solid #f4904042; border-bottom:1px solid #f490405d; overflow: hidden;
+}
+html[data-theme="halloween"] .halloween-break img { height: 65px; width: 74px; object-fit:contain; filter: drop-shadow(0 0 8px #f379334d); }
+html[data-theme="halloween"] .halloween-break img:nth-of-type(2){ height: 58px; }
+html[data-theme="halloween"] .halloween-break-word { font-family: var(--font-display); font-style: italic; font-size: clamp(1.4rem, 2.4vw, 2.35rem); letter-spacing: .12em; line-height: 1; text-shadow: 2px 3px 0 #050005, 0 0 12px #ff8a4845; color:#ffbf75; white-space:nowrap; }
+html[data-theme="halloween"] .halloween-break-line { width:clamp(32px,9vw,160px); height:2px; background:linear-gradient(90deg,transparent,#ef793f,transparent); }
+html[data-theme="halloween"] .project-feature { position: relative; }
+html[data-theme="halloween"] .halloween-feature-web { position:absolute; top:0; right:0; width:clamp(125px,16vw,245px); opacity:.65; pointer-events:none; z-index:2; }
+html[data-theme="halloween"] .halloween-feature-ghost { position:absolute; width:75px; right:4%; bottom:-20px; z-index:3; opacity:.98; pointer-events:none; transform:rotate(10deg); filter:drop-shadow(0 0 10px #c8b7ff88); }
+html[data-theme="halloween"] .about-image { overflow: visible; }
+html[data-theme="halloween"] .about-image > img:not(.halloween-about-ghost) { border-radius: 13px; }
+html[data-theme="halloween"] .halloween-about-ghost { position:absolute; top:-37px; right:-30px; width: clamp(90px, 11vw, 150px); z-index:3; filter:drop-shadow(0 0 14px #f9defa77); pointer-events:none; animation:ghost-bob 6s ease-in-out infinite; }
+html[data-theme="halloween"] .gallery::before { content:''; position:absolute; top:0; right:0; width:140px; height:140px; background:url('assets/spiderweb-bright.svg') right top / contain no-repeat; opacity:.65; pointer-events:none; }
+html[data-theme="halloween"] .gallery-intro-copy { position:relative; }
+html[data-theme="halloween"] .halloween-gallery-pumpkin { position:absolute; width:clamp(60px,6vw,88px); top:-10px; right:20px; pointer-events:none; filter:drop-shadow(0 0 10px #ff82005c); transform: rotate(10deg); }
+html[data-theme="halloween"] .gallery-card { border-color:#ffc38a6a; }
+html[data-theme="halloween"] .gallery-card::before { content: ''; position:absolute; top:0; right:0; z-index:2; width:65px; height:65px; background:url('assets/spiderweb-bright.svg') right top /contain no-repeat; opacity:.65; pointer-events:none; }
+html[data-theme="halloween"] .season-pumpkin { width: clamp(130px,13vw,220px); right:-20px; bottom:-28px; opacity:1; filter:drop-shadow(0 0 15px #672303a8); }
+html[data-theme="halloween"] .halloween-cta-ghost { position:absolute; width:clamp(110px,12vw,170px); top:-55px; right:12%; pointer-events:none; filter:drop-shadow(0 0 12px #fff4e55a); transform:rotate(-10deg); }
+html[data-theme="halloween"] .cta-layout { z-index:2; }
+html[data-theme="halloween"] .site-footer { background:linear-gradient(90deg,#170c19,#28101a,#160d18); border-top:1px solid #fd954242; }
+html[data-theme="halloween"] .modal-top { background:#281722; }
+@keyframes ghost-bob { 0%,100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+@media (min-width: 801px) and (max-width: 1150px) {
+  html[data-theme="halloween"] .hero-halloween-ghost { width:93px; right:1%; top:53%; }
+  html[data-theme="halloween"] .hero-halloween-pumpkin { width:120px; }
+}
+@media (max-width:800px) {
+  html[data-theme="halloween"] .halloween-night-strip { min-height: 39px; gap:12px; font-size:.6rem; letter-spacing:.14em; }
+  html[data-theme="halloween"] .halloween-night-strip img:first-child { width:36px; height:33px; }
+  html[data-theme="halloween"] .halloween-night-strip img:nth-of-type(2) { width:65px; }
+  html[data-theme="halloween"] .halloween-night-strip img:nth-of-type(3) { width:30px; }
+  html[data-theme="halloween"] .halloween-night-strip span:nth-of-type(2) { display:none; }
+  html[data-theme="halloween"] .hero-halloween-web { width:125px; right:-7px; top:0; }
+  html[data-theme="halloween"] .hero-halloween-bats { width:105px; left:5%; top:0; }
+  html[data-theme="halloween"] .hero-halloween-ghost { width:92px; top:112px; right:2%; }
+  html[data-theme="halloween"] .hero-halloween-pumpkin { width:102px; top:111px; left:-3%; bottom:auto; }
+  html[data-theme="halloween"] .halloween-break { height:59px; }
+  html[data-theme="halloween"] .halloween-break img { height:52px; width:55px; }
+  html[data-theme="halloween"] .halloween-feature-ghost { width:61px; right:0; bottom:-14px; }
+  html[data-theme="halloween"] .halloween-about-ghost { width:98px; top:-25px; right:-9px; }
+  html[data-theme="halloween"] .halloween-gallery-pumpkin { right:10px; width:72px; }
+  html[data-theme="halloween"] .halloween-cta-ghost { right:-10px; top:-30px; width:105px; }
+  html[data-theme="halloween"] .season-pumpkin { right:-30px; width:130px; }
+}
+@media (max-width: 520px) {
+  html[data-theme="halloween"] .hero-halloween-ghost { top:110px; width:86px; right:-7px; }
+  html[data-theme="halloween"] .hero-halloween-pumpkin { width:98px; top:116px; left:-12px; }
+  html[data-theme="halloween"] .hero-halloween-web { width:108px; }
+  html[data-theme="halloween"] .hero-halloween-bats { width:90px; left:2%; top:-3px; }
+  html[data-theme="halloween"] .halloween-break { gap:7px; }
+  html[data-theme="halloween"] .halloween-break-word { font-size:1.22rem; letter-spacing:.07em; }
+  html[data-theme="halloween"] .halloween-break-line { width:12px; }
+  html[data-theme="halloween"] .halloween-break img { height:47px; width:50px; }
+  html[data-theme="halloween"] .halloween-gallery-pumpkin { width:50px; right:-3px; top:7px; }
+  html[data-theme="halloween"] .halloween-feature-ghost { width:53px; right:-4px; bottom:-10px; }
+  html[data-theme="halloween"] .halloween-cta-ghost { top:-18px; right:-5px; width:77px; opacity:.85; }
+  html[data-theme="halloween"] .season-pumpkin { right:-24px; bottom:-22px; width:92px; }
+}
+@media (prefers-reduced-motion: reduce) { html[data-theme="halloween"] .hero-halloween-ghost, html[data-theme="halloween"] .halloween-about-ghost { animation:none; } }
+/* v1.3 mobile hero-art width was accidentally overridden by a later desktop rule.
+   Restore full-width campaign illustration in both themes. */
+@media (max-width: 800px) {
+  .hero .hero-art { width:100%; }
+}
+/* An about-section illustration must not inherit the full-width photograph's sizing. */
+html[data-theme="halloween"] .about-image > img.halloween-about-ghost {
+  width: clamp(90px, 10vw, 130px);
+  height: auto;
+  min-height: 0;
+  max-width: none;
+  object-fit: contain;
+}
+@media (max-width: 800px) {
+  html[data-theme="halloween"] .about-image > img.halloween-about-ghost { width: 95px; }
+}

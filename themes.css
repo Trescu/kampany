@@ -1,0 +1,95 @@
+/*
+ * Two interchangeable visual skins for the same HTML.
+ * Theme selection happens in theme.js, automatically based on Budapest dates.
+ * ?theme=halloween or ?theme=classic previews either skin at any time.
+ */
+
+/* Shared seasonal decorative elements are absent by default. */
+.season-pill, .season-pumpkin { display: none; }
+
+/* HALLOWEEN: pumpkin orange, dark aubergine, moonlight and subtle cobwebs. */
+html[data-theme="halloween"] {
+  --bg: #100d13;
+  --panel: #221a23;
+  --panel-2: #31202a;
+  --orange: #ff7900;
+  --orange-light: #ffae50;
+  --cream: #fff0d4;
+  --border: rgba(255, 200, 150, .32);
+}
+html[data-theme="halloween"] .season-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 12px;
+  padding: 3px 8px;
+  border: 1px solid #ff99426b;
+  border-radius: 50px;
+  background: #42202bb8;
+  color: #ffcc84;
+  letter-spacing: .11em;
+  font-size: .59rem;
+  vertical-align: middle;
+  box-shadow: 0 0 15px #fd7b2224;
+}
+html[data-theme="halloween"] .site-header { box-shadow: 0 3px 24px #fa601007; }
+html[data-theme="halloween"] .hero { background: radial-gradient(circle at 64% 19%, #462139 0, transparent 34%),radial-gradient(circle at 53% 68%, #3b2219 0, transparent 48%),#150f18; }
+html[data-theme="halloween"] .seasonal-moon { opacity: .43; }
+html[data-theme="halloween"] .bat { opacity: .62; }
+html[data-theme="halloween"] .bat-two { opacity: .48; }
+html[data-theme="halloween"] .cta-section { background: repeating-linear-gradient(132deg,transparent 0 32px,#ffffff0a 33px 35px,transparent 38px 64px),radial-gradient(circle at 83% 28%,#ffcf77 0%,transparent 47%),#fc7307; }
+html[data-theme="halloween"] .season-pumpkin {
+  display: block;
+  position: absolute;
+  right: max(2%, calc((100vw - 1500px) / 2));
+  bottom: 0;
+  width: clamp(88px, 11vw, 145px);
+  opacity: .58;
+  pointer-events: none;
+}
+html[data-theme="halloween"] .icon-tile { box-shadow: 0 0 15px #fd790018, 0 2px 5px #0004; }
+
+/* CLASSIC: no seasonal decoration; black, charcoal and confident orange. */
+html[data-theme="classic"] {
+  --bg: #111111;
+  --panel: #1c1c1c;
+  --panel-2: #292929;
+  --orange: #ff7a00;
+  --orange-light: #ffab46;
+  --cream: #fff1d3;
+  --border: rgba(255, 243, 222, .26);
+}
+html[data-theme="classic"] body { background: #101010; }
+html[data-theme="classic"] .draft-strip { background: #202020; color: #d6c6b3; border-bottom-color: #ffffff2b; }
+html[data-theme="classic"] .site-header { background: #0b0b0bf2; border-bottom-color: #ffffff24; }
+html[data-theme="classic"] .hero { background: radial-gradient(ellipse at 53% 75%, #3a2414 0%, transparent 53%),#151515; }
+html[data-theme="classic"] .hero::before,
+html[data-theme="classic"] .seasonal-decor,
+html[data-theme="classic"] .program::before,
+html[data-theme="classic"] .cta-section::before { display: none; }
+html[data-theme="classic"] .why { background: linear-gradient(120deg,#1b1b1b,#121212); }
+html[data-theme="classic"] .value-card { background: linear-gradient(145deg,#272727 0%,#1a1a1a 95%); border-color:#fff0cf32; }
+html[data-theme="classic"] .value-card:hover { border-color:#ff9f38a0; }
+html[data-theme="classic"] .program { background: #141414; }
+html[data-theme="classic"] .project-feature { background: linear-gradient(110deg,#26201c,#191919 55%,#281f19); border-color:#ff9b533f; }
+html[data-theme="classic"] .project-feature-art { background:radial-gradient(circle at 50% 50%,#d2732940,transparent 70%); }
+html[data-theme="classic"] .preview-top { background:#232323; border-color:#9f71547a; }
+html[data-theme="classic"] .preview-layout { background:#1a1a1a; border-color:#9f71547a; }
+html[data-theme="classic"] .preview-banner { background:#3c2a1f; }
+html[data-theme="classic"] .project-small { background:linear-gradient(145deg,#282522,#1c1c1c); }
+html[data-theme="classic"] .project-secret { background:linear-gradient(145deg,#282321,#191919); border-color:#ffffff2c; }
+html[data-theme="classic"] .secret-stamp { color:#ffae4b52; border-color:#ffae4b52; }
+html[data-theme="classic"] .about { background: linear-gradient(130deg,#171717,#231d19); }
+html[data-theme="classic"] .gallery { background: #161616; }
+html[data-theme="classic"] .cta-section { background:repeating-linear-gradient(132deg,transparent 0 32px,#ffffff08 33px 35px,transparent 38px 64px),radial-gradient(circle at 78% 20%,#ffd37b 0%,transparent 52%),#ff7b11; }
+html[data-theme="classic"] .site-footer { background:#111; border-top-color:#f9a35429; }
+html[data-theme="classic"] .image-modal { background:#151515; border-color:#ffad55; }
+html[data-theme="classic"] .modal-top { background:#1b1b1b; }
+html[data-theme="classic"] .modal-story { background:transparent; }
+
+@media (max-width: 800px) {
+  html[data-theme="halloween"] .season-pill { margin: 7px 0 0; }
+  html[data-theme="halloween"] .seasonal-moon { opacity: .28; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="halloween"] .seasonal-decor { animation: none; }
+}
