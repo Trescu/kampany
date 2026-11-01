@@ -20,7 +20,10 @@ A régi történetsablonok **eredeti, Lorem ipsum helykitöltő szövegei** mara
 Asztali nézeten balra nagy kép, jobbra hosszabb blogszöveg, mobilon egymás alatt. A képek `object-fit: contain` beállítással, levágás nélkül jelennek meg. Az `Előző` / `Következő` gombok egy új kép+szöveg párost töltenek be. A használat nem igényel JavaScript buildet vagy külső függőséget.
 
 ## Képernyőmagassághoz igazítás (v2)
-A galéria a böngésző látható területét tölti ki (`100dvh`), nem görgethető. A fotó `object-fit: contain` beállítással levágás nélkül tölti ki a rendelkezésre álló teret. A hosszú blogszöveg a jobb oldali oszlopban oldalakra oszlik; a szöveg alatt külön lapozó van. Mobilon a kép újra felül, a szöveg alul látszik egyszerre; a szöveg saját lapozóval működik, oldal- vagy tartalomgörgetés nélkül. A képváltó gombok folyamatosan láthatók.
+A galéria a böngésző látható területét tölti ki (`100dvh`), nem görgethető. A fotó `object-fit: contain` beállítással levágás nélkül tölti ki a rendelkezésre álló teret. A hosszú blogszöveg a jobb oldali oszlopban külön görgethető, nincs szöveglapozó. Mobilon a kép újra felül, a szöveg alul látszik egyszerre; a szöveg saját, független görgetősávval olvasható, az oldal viszont nem görgethető. A képváltó gombok folyamatosan láthatók.
 
 ## Mobil elrendezés (v3)
 Telefonon a kétoszlopos elrendezés két egymás alatti területté válik. A kép felül, a paginált blogszöveg közvetlenül alatta van. A korábbi mobilos Kép/Történet kapcsolót eltávolítottuk. Az egész oldal továbbra is 100dvh, a navigáció látható és a fotó nem vágódik le.
+
+## Szöveggörgetés (v4)
+A történetek most folyamatos szövegként jelennek meg a `#story-copy` elemben (`overflow-y:auto`). A korábbi szöveglapozó gombok és JavaScript-alapú tördelés megszűntek. A képek és az oldal helyben maradnak, és minden képváltáskor a szövegdoboz a tetejére áll. Telefonon a szöveg a kép alatt önállóan görgethető.

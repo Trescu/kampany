@@ -39,11 +39,7 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   padding:0 11px 7px;border-bottom:1px solid #ffffff22;font-weight:800
 }
 #modal-caption{font-size:clamp(.96rem,1.4vw,1.12rem);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.reader-toolbar{display:flex;gap:15px;align-items:center;flex-shrink:0}
 .story-progress{color:var(--orange-light);letter-spacing:.1em;font-size:.76rem}
-.view-switch{display:none;gap:3px}
-.view-button{color:#c8c5bf;background:#1f1f1f;border:1px solid #70685b;padding:6px 9px;border-radius:4px;font-weight:750;font-size:.77rem}
-.view-button.is-active{background:#e5aa2b;color:#0c0c0c;border-color:#e5aa2b}
 .modal-content{
   min-width:0;min-height:0;height:100%;overflow:hidden;
   display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,.9fr);
@@ -68,27 +64,24 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   padding:clamp(8px,1.4vw,21px) clamp(10px,2vw,30px) 6px clamp(3px,1vw,14px)
 }
 .story-copy{
-  flex:1;min-height:0;width:100%;overflow:hidden;position:relative;
+  flex:1;min-height:0;width:100%;position:relative;
+  overflow-y:auto;overflow-x:hidden;
+  overscroll-behavior-y:contain;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+  scrollbar-width:thin;
+  scrollbar-color:#9e874f #171717;
+  padding-right:clamp(5px,.7vw,10px);
 }
-.story-page{width:100%;height:auto;min-height:0}
-.story-page[hidden]{display:none!important}
+.story-copy::-webkit-scrollbar{width:7px}
+.story-copy::-webkit-scrollbar-thumb{background:#8e7950;border-radius:6px}
+.story-copy::-webkit-scrollbar-track{background:#171717}
 .modal-story h3{margin:0 0 13px;font-size:clamp(1.25rem,1.9vw,1.95rem);line-height:1.14;color:var(--cream)}
 .modal-story h4{font-size:.99rem;margin:15px 0 7px;color:var(--orange-light)}
 .modal-story p{font-size:clamp(.81rem,1vw,.96rem);line-height:1.55;color:#eee5d6;margin:0 0 10px}
 .modal-story .story-kicker{font-size:.7rem;font-weight:850;color:var(--orange);letter-spacing:.11em;margin:0 0 12px}
 .modal-story ul{padding-left:20px;color:#e8e4dd;margin:0 0 15px}
 .modal-story li{font-size:clamp(.8rem,1vw,.95rem);line-height:1.42;margin:0 0 5px}
-.story-pagination{
-  flex:0 0 auto;display:flex;justify-content:flex-end;align-items:center;gap:10px;
-  min-height:32px;margin-top:7px;padding-top:6px;border-top:1px solid #ffffff20;
-  font-size:.78rem;color:#a9a39b;font-weight:800
-}
-.story-page-btn{
-  min-width:32px;min-height:26px;border:1px solid #8e7f67;border-radius:4px;
-  background:#222;color:#fff1d3;font-weight:850;padding:2px 8px
-}
-.story-page-btn:hover:not(:disabled){background:#e5aa2b;color:#0c0c0c}
-.story-page-btn:disabled{opacity:.33;cursor:default}
 .modal-navigation{
   flex:0 0 auto;display:flex;justify-content:center;align-items:center;gap:20px;
   min-height:45px;border-top:1px solid #ffffff23;padding:7px 9px 0
@@ -119,7 +112,7 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .page-main{width:calc(100% - 14px);padding:6px 0}
   .image-modal.story-reader{padding:6px}
   .modal-top{min-height:36px}
-  /* Both elements are always visible. Image on top, paginated text underneath. */
+  /* Both elements are always visible. Image on top, scrollable story underneath. */
   .modal-content{
     display:grid;
     grid-template-columns:minmax(0,1fr);

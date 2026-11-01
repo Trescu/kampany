@@ -8,8 +8,8 @@
   <title>Ricsi a HÖK-ért | Kampánygaléria</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
   <link rel="preload" as="image" href="assets/street-mercedes.webp"/>
-  <link rel="stylesheet" href="gallery-page.css?v=3"/>
-  <script defer src="gallery-page.js?v=3"></script>
+  <link rel="stylesheet" href="gallery-page.css?v=4"/>
+  <script defer src="gallery-page.js?v=4"></script>
 </head>
 <body>
   <div class="page">
@@ -31,12 +31,8 @@
 
           </div>
           <article class="modal-story" id="modal-story" aria-label="A képhez tartozó történet">
-            <div class="story-copy" id="story-copy"></div>
-            <div class="story-pagination" id="story-pagination" aria-label="Történet lapozása">
-              <button type="button" class="story-page-btn" id="story-prev" aria-label="Előző szövegoldal">‹</button>
-              <span id="story-page-info" aria-live="polite">1 / 1</span>
-              <button type="button" class="story-page-btn" id="story-next" aria-label="Következő szövegoldal">›</button>
-            </div>
+            <div class="story-copy" id="story-copy" tabindex="0" role="region" aria-label="A kiválasztott képhez tartozó történet – görgethető szöveg"></div>
+
           </article>
         </div>
                     <div class="modal-navigation" aria-label="Lapozás a kampányképek között">
@@ -49,7 +45,7 @@
     <footer class="page-footer">
       <span>GDE / FÜGGETLEN HALLGATÓI KAMPÁNYOLDAL</span>
       <span>A részletes kampányszövegek még szerkesztés alatt.</span>
-      <span class="key-tip">← → KÉPVÁLTÁS · SZÖVEG LAPOZÁSA GOMBOKKAL</span>
+      <span class="key-tip">← → KÉPVÁLTÁS · A SZÖVEG KÜLÖN GÖRGETHETŐ</span>
     </footer>
   </div>
   <template id="story-campaign"><p class="story-kicker">01 / LOREM IPSUM</p>
