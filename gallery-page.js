@@ -7,7 +7,6 @@ const $=id=>document.getElementById(id);
 const image=$('modal-image'),caption=$('modal-caption'),reader=$('story-reader');
 const copy=$('story-copy'),progress=$('story-progress'),navIndex=$('nav-index');
 const pageInfo=$('story-page-info'),prevPage=$('story-prev'),nextPage=$('story-next');
-const imageButton=$('view-image'),textButton=$('view-text');
 if(!image||!caption||!reader||!copy)return;
 let active=0,storyPage=0,pages=[],originalBlocks=[],resizeFrame=0;
 const getIndex=hash=>{const m=/^#kep-([1-5])$/.exec(hash);return m?Number(m[1])-1:0;};
@@ -69,8 +68,7 @@ function paginate(){
 function populate(){
  const template=$(templates[active]);originalBlocks=template?[...template.content.children].map(n=>n.cloneNode(true)):[];
  storyPage=0;
- if(mobile()&&reader.dataset.mobileView==='image')copy.replaceChildren();
- else paginate();
+ paginate();
 }
 function render(index){
  active=(index+images.length)%images.length;
@@ -85,20 +83,10 @@ function go(index){
  if(location.hash!==hash)history.pushState({image:next},'',hash);
  render(next);
 }
-function setView(view){
- reader.dataset.mobileView=view;
- imageButton?.classList.toggle('is-active',view==='image');
- textButton?.classList.toggle('is-active',view==='text');
- imageButton?.setAttribute('aria-pressed',String(view==='image'));
- textButton?.setAttribute('aria-pressed',String(view==='text'));
- if(view==='text')requestAnimationFrame(()=>{paginate()});
-}
 $('modal-prev')?.addEventListener('click',()=>go(active-1));
 $('modal-next')?.addEventListener('click',()=>go(active+1));
 prevPage?.addEventListener('click',()=>showTextPage(storyPage-1));
 nextPage?.addEventListener('click',()=>showTextPage(storyPage+1));
-imageButton?.addEventListener('click',()=>setView('image'));
-textButton?.addEventListener('click',()=>setView('text'));
 document.addEventListener('keydown',event=>{
  if(event.altKey||event.ctrlKey||event.metaKey||event.target.closest?.('input,textarea,select,[contenteditable]'))return;
  if(event.key==='ArrowLeft'){event.preventDefault();go(active-1)}
@@ -110,7 +98,7 @@ window.addEventListener('popstate',()=>render(getIndex(location.hash)));
 window.addEventListener('hashchange',()=>render(getIndex(location.hash)));
 window.addEventListener('resize',()=>{
  cancelAnimationFrame(resizeFrame);
- resizeFrame=requestAnimationFrame(()=>{if(!mobile()||reader.dataset.mobileView==='text')paginate()});
+ resizeFrame=requestAnimationFrame(()=>paginate());
 });
 let touchStart=null;
 image.addEventListener('touchstart',event=>{

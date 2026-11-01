@@ -118,17 +118,29 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media(max-width:900px){
   .page-main{width:calc(100% - 14px);padding:6px 0}
   .image-modal.story-reader{padding:6px}
-  .modal-top{min-height:38px}
-  .view-switch{display:flex}
-  .modal-content{display:block;position:relative}
+  .modal-top{min-height:36px}
+  /* Both elements are always visible. Image on top, paginated text underneath. */
+  .modal-content{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:minmax(0,1.02fr) minmax(0,.98fr);
+    gap:5px;
+    min-height:0;
+  }
   .modal-media,.modal-story{height:100%;width:100%;min-width:0;min-height:0}
-  .modal-media{padding:8px}
-  .image-frame{height:100%;max-height:none}
-  .image-frame img{max-height:100%}
-  .modal-story{padding:clamp(10px,3vw,22px);padding-bottom:6px}
-  .story-reader[data-mobile-view="image"] .modal-story{display:none!important}
-  .story-reader[data-mobile-view="text"] .modal-media{display:none!important}
-  .modal-navigation{min-height:45px}
+  .modal-media{padding:4px 6px 0}
+  .image-frame{height:100%;min-height:0;max-height:none}
+  .image-frame img{max-height:100%;object-fit:contain}
+  .modal-story{padding:6px 10px 3px;border-top:1px solid #ffffff20}
+  .modal-story h3{font-size:clamp(1.13rem,3.5vw,1.5rem);margin-bottom:8px}
+  .modal-story h4{font-size:.9rem;margin:9px 0 5px}
+  .modal-story p{font-size:clamp(.79rem,2.45vw,.9rem);line-height:1.42;margin-bottom:8px}
+  .modal-story .story-kicker{font-size:.65rem;margin-bottom:7px}
+  .modal-story ul{margin-bottom:10px}
+  .modal-story li{font-size:clamp(.77rem,2.45vw,.86rem);margin-bottom:3px}
+  .story-pagination{min-height:27px;padding-top:3px;margin-top:4px}
+  .story-page-btn{min-height:24px}
+  .modal-navigation{min-height:42px}
   .page-footer span:nth-child(2){display:none}
 }
 @media(max-width:470px){
@@ -140,8 +152,9 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .image-modal.story-reader{border-left:0;border-right:0;border-radius:0;padding:5px}
   .modal-top{padding:2px 7px 6px}
   .story-progress{font-size:.65rem}
-  .view-button{padding:5px 7px;font-size:.7rem}
   #modal-caption{font-size:.85rem}
+  .modal-content{grid-template-rows:minmax(0,.93fr) minmax(0,1.07fr);gap:3px}
+  .modal-story{padding:5px 8px 2px}
   .modal-navigation{gap:13px;min-height:39px;padding-top:4px}
   .modal-nav-btn{min-height:30px;padding:4px 10px;font-size:.82rem}
   .page-footer{min-height:24px;padding:4px 9px}
