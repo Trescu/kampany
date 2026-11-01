@@ -1,367 +1,91 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="hu">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="#090909" name="theme-color"/>
-<meta content="Ricsi a HÖK-ért – hallgatói kampányoldal a Gábor Dénes Egyetemen." name="description"/>
-<meta content="website" property="og:type"/>
-<meta content="Ricsi a HÖK-ért | GDE hallgatói kampány" property="og:title"/>
-<meta content="Hallgatói érdekképviselet, eHÖK, digitalizáció és közösség." property="og:description"/>
-<meta content="assets/social-preview.webp" property="og:image"/>
-<meta content="dark" name="color-scheme"/>
-<title>Ricsi a HÖK-ért | GDE hallgatói kampány</title>
-<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link as="image" href="assets/campus-brown.webp" media="(min-width: 801px)" rel="preload"/>
-<link as="image" href="assets/campus-maroon.webp" media="(max-width: 800px)" rel="preload"/>
-<!-- Set the current theme before CSS is parsed to avoid flashing the wrong palette. -->
-<script src="config.js"></script>
-<script src="theme.js"></script>
-<link href="styles.css" rel="stylesheet"/>
-<link href="themes.css" rel="stylesheet"/>
-<link href="halloween-decor.css" rel="stylesheet"/>
-<link href="sections.css" rel="stylesheet"/>
-<link href="gta.css?v=2" rel="stylesheet"/>
-<link href="game-shell.css?v=1" rel="stylesheet"/>
-<link href="why-settings.css?v=1" rel="stylesheet"/>
-<link href="program-stats.css?v=1" rel="stylesheet"/>
-<link href="gallery-spotlight.css?v=3" rel="stylesheet"/>
-<script defer src="script.js?v=gallery-flip2"></script>
-<script defer src="game-shell.js?v=1"></script>
-<script defer src="why-settings.js?v=1"></script>
-<script defer src="program-stats.js?v=1"></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#101010"/>
+  <meta name="description" content="Ricsi a HÖK-ért – kampánygaléria történetekkel és képekkel."/>
+  <title>Ricsi a HÖK-ért | Kampánygaléria</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+  <link rel="preload" as="image" href="assets/street-mercedes.webp"/>
+  <link rel="stylesheet" href="gallery-page.css?v=1"/>
+  <script defer src="gallery-page.js?v=1"></script>
 </head>
 <body>
-<a class="skip-link" href="#main">Ugrás a tartalomhoz</a>
-<aside aria-label="Szerkesztési állapot" class="draft-strip" id="draft-strip">KAMPÁNYOLDAL / A RÉSZLETES SZÖVEGEK MÉG SZERKESZTÉS ALATT</aside><header class="site-header gta-header" id="top">
-  <div class="header-inner container">
-    <a class="brand gta-brand" href="#fooldal" aria-label="Ricsi a HÖK-ért – Főoldal">Ricsi <em>a HÖK-ért</em></a>
-    <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Menü megnyitása"><span></span><span></span><span></span></button>
-    <nav class="primary-nav gta-top-nav" id="primary-nav" aria-label="Fő navigáció">
-      <a href="#fooldal" class="is-current">Főoldal</a>
-      <a href="#miert-en">Miért indulok?</a>
-      <a href="#programom">Programom</a>
-      <a href="#megjelenesek">Eddigi munkám</a>
-      <a href="#csapatom">Csapatom</a>
-      <a href="#galeria">Galéria</a>
-      <a href="#kapcsolat">Kapcsolat</a>
-    </nav>
-    <button class="gta-halloween-button" id="halloween-toggle" type="button" aria-pressed="false" aria-label="Halloween mód bekapcsolása"><span aria-hidden="true">☠</span><span>Halloween</span></button>
-  </div>
-</header>
-<div class="halloween-night-strip halloween-only" aria-hidden="true"><img src="assets/jack-o-lantern.svg" alt=""><span>HALLOWEEN EDITION</span><img src="assets/bat-swarm.svg" alt=""><span>OCT 20 — NOV 02</span><img src="assets/ghost-white.svg" alt=""></div>
-<main id="main">
-<section class="gta-landing" id="fooldal" aria-labelledby="hero-title">
-  <div class="gta-background" aria-hidden="true"></div>
-  <div class="gta-grain" aria-hidden="true"></div>
-  <div class="gta-home-layout container">
-    <div class="gta-menu-wrap">
-      <p class="gta-chapter">GÁBOR DÉNES EGYETEM / HALLGATÓI KAMPÁNY</p>
-      <h1 id="hero-title">Ricsi <span>a HÖK-ért</span></h1>
-      <p class="gta-intro">Hallgatói érdekképviselet új lendülettel. eHÖK, digitalizáció és valódi hallgatói visszajelzések.</p>
-      <nav class="gta-side-menu" aria-label="Kampány fejezetei">
-        <a href="#miert-en" class="gta-selected">Folytatás <span aria-hidden="true">▶</span></a>
-        <a href="#miert-en">Miért indulok?</a>
-        <a href="#programom">Programom</a>
-        <a href="#megjelenesek">Eddigi munkám</a>
-        <a href="#csapatom">Csapatom</a>
-        <a href="#galeria">Galéria</a>
-        <a href="#kapcsolat">Kapcsolat</a>
-      </nav>
-    </div>
-  </div>
-  <div class="gta-bottom-hud">
-    <span>GDE HÖK / FÜGGETLEN HALLGATÓI KAMPÁNY</span>
-    <div><span><kbd>ENTER</kbd> Kiválasztás</span><span><kbd>ESC</kbd> Vissza</span></div>
-  </div>
-</section>
-<section class="why-settings" id="miert-en" aria-labelledby="why-title">
-  <div class="why-stage-art" aria-hidden="true"></div>
-  <div class="why-settings-layout">
-    <div class="why-controls">
-      <h2 id="why-title">Miért indulok?</h2>
-      <div class="why-choice-list" role="group" aria-label="Motivációim – válassz témát">
-        <button class="why-choice is-selected" data-why-option="0" type="button" aria-pressed="true">
-          <span>Hallgatói érdekképviselet</span><span class="why-choice-value"><b aria-hidden="true">◀</b> Be <b aria-hidden="true">▶</b></span>
-        </button>
-        <button class="why-choice" data-why-option="1" type="button" aria-pressed="false">
-          <span>Digitális fejlesztések</span><span class="why-choice-value"><b aria-hidden="true">◀</b> Be <b aria-hidden="true">▶</b></span>
-        </button>
-        <button class="why-choice" data-why-option="2" type="button" aria-pressed="false">
-          <span>Átlátható kommunikáció</span><span class="why-choice-value"><b aria-hidden="true">◀</b> Be <b aria-hidden="true">▶</b></span>
-        </button>
-        <button class="why-choice" data-why-option="3" type="button" aria-pressed="false">
-          <span>Aktív közösség</span><span class="why-choice-value"><b aria-hidden="true">◀</b> Be <b aria-hidden="true">▶</b></span>
-        </button>
-      </div>
-      <div class="why-settings-group why-gauges" aria-label="Kampányprioritások – illusztratív értékek, nem statisztikai mérőszámok">
-        <div class="why-meter-row"><span>Hallgatói fókusz</span><span class="why-meter-track"><span></span></span><span class="why-meter-number">100</span></div>
-        <div class="why-meter-row"><span>Átláthatóság</span><span class="why-meter-track"><span></span></span><span class="why-meter-number">100</span></div>
-        <div class="why-meter-row"><span>Elérhetőség</span><span class="why-meter-track"><span></span></span><span class="why-meter-number">100</span></div>
-        <div class="why-meter-row"><span>Fejleszthetőség</span><span class="why-meter-track"><span></span></span><span class="why-meter-number">100</span></div>
-      </div>
-      <dl class="why-settings-group why-yes-list">
-        <div><dt>Tapasztalatra építés</dt><dd>Igen</dd></div>
-        <div><dt>Elhivatottság</dt><dd>Igen</dd></div>
-        <div><dt>Program összhangja</dt><dd>Igen</dd></div>
-        <div><dt>Eredményorientáltság</dt><dd>Igen</dd></div>
-      </dl>
-      <a class="why-program-link" href="#programom">A programom részletesebben <span aria-hidden="true">▶</span></a>
-    </div>
-    <aside class="why-description" aria-live="polite" aria-atomic="true">
-      <p id="why-description-text">A hallgatók érdekeinek képviselete a döntéshozatalban, valódi hallgatói visszajelzések alapján.</p>
-    </aside>
-  </div>
-</section>
-<div aria-hidden="true" class="halloween-break halloween-only"><span class="halloween-break-line"></span><img src="assets/jack-o-lantern.svg" alt=""><span class="halloween-break-word">TRICK OR TREAT</span><img src="assets/ghost-white.svg" alt=""><span class="halloween-break-line"></span></div>
-<section class="program program-stats" id="programom" aria-labelledby="program-title">
-  <h2 class="sr-only" id="program-title">Programom</h2>
-  <div class="program-stats-layout">
-    <nav class="program-stats-sidebar" aria-label="Programom kategóriái">
-      <button class="program-stats-option is-selected" data-program-stats="ehok" type="button" aria-pressed="true">eHÖK</button>
-      <button class="program-stats-option" data-program-stats="neptun" type="button" aria-pressed="false">Neptun app</button>
-      <button class="program-stats-option" data-program-stats="tanulas" type="button" aria-pressed="false">Tanulást segítő eszközök</button>
-      <button class="program-stats-option" data-program-stats="ugyintezes" type="button" aria-pressed="false">Hallgatói ügyintézés</button>
-      <button class="program-stats-option" data-program-stats="digital" type="button" aria-pressed="false">Digitalizáció</button>
-      <button class="program-stats-option" data-program-stats="kozosseg" type="button" aria-pressed="false">Közösségi programok</button>
-    </nav>
-    <div class="program-stats-right" aria-live="polite" aria-atomic="true" aria-label="Kiválasztott program részletei">
-      <div class="program-stats-table" id="program-stats-table">
-        <div class="program-stats-row"><span>Fő projekt</span><span>eHÖK</span></div>
-        <div class="program-stats-row"><span>Állapot</span><span>Tervezés alatt</span></div>
-        <div class="program-stats-row"><span>Cél</span><span>Digitális hallgatói önkormányzati platform</span></div>
-        <div class="program-stats-row"><span>Kommunikáció</span><span>Hallgatói visszajelzések</span></div>
-        <div class="program-stats-row"><span>Ügyintézés</span><span>Digitális támogatás</span></div>
-        <div class="program-stats-row"><span>Átláthatóság</span><span>Kiemelt cél</span></div>
-        <div class="program-stats-row"><span>Közösségi kapcsolódás</span><span>Fontos</span></div>
-        <div class="program-stats-row"><span>Hallgatói élmény</span><span>Fejlesztendő</span></div>
-        <div class="program-stats-row"><span>Prioritás</span><span>Magas</span></div>
-        <div class="program-stats-row"><span>Fókusz</span><span>GDE hallgatók</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GDE/community mentions: cards and links are populated from config.js. -->
-<section class="press section-border" id="megjelenesek" aria-labelledby="press-title">
-  <div class="container">
-    <div class="section-heading-row press-heading-row">
-      <div>
-        <p class="section-kicker">04 / ONLINE MEGJELENÉSEK</p>
-        <h2 class="brush-heading" id="press-title">Megjelenéseim</h2>
-      </div>
-      <p class="section-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ligula a finibus volutpat, neque lorem dignissim magna.</p>
-    </div>
-    <div class="press-grid" id="press-grid" aria-label="GDE megjelenések és közösségi posztok"></div>
-    <p class="section-editor-note">A kártyák jelenleg minták. Valódi bejegyzések megadásakor az eredeti posztokra vezető hivatkozás automatikusan megjelenik.</p>
-  </div>
-  <img class="press-halloween-web halloween-only" src="assets/spiderweb-bright.svg" alt="" aria-hidden="true" loading="lazy"/>
-</section>
-
-<!-- Team cards: person data comes from config.js; each button opens a full profile dialog. -->
-<section class="team game-screen" id="csapatom" aria-labelledby="team-title">
-  <div class="love-browser" aria-label="Csapatom – retro böngésző">
-    <div class="love-toolbar">
-      <div class="love-address" aria-label="Kitalált játékbeli webcím"><span class="love-dot"></span><span>www.hok-meet.local / csapatom</span></div>
-      <div class="love-browser-buttons">
-        <button type="button" id="love-prev" title="Előző menü" aria-label="Előző menü">◀</button>
-        <button type="button" id="love-next" title="Következő menü" aria-label="Következő menü">▶</button>
-        <button type="button" id="love-home" title="Főoldal" aria-label="Vissza a főoldalra">⌂</button>
-      </div>
-    </div>
-    <div class="love-page">
-      <div class="love-banner">
-        <div class="love-logo"><span>HÖK</span><em>meet</em></div>
-        <div class="love-banner-copy"><h2 id="team-title">Ismerd meg a csapatom!</h2><p>Nem társkereső, hanem egy közös ügy: hallgatók a hallgatókért.</p></div>
-      </div>
-      <div class="love-content">
-        <aside class="love-aside">
-          <div class="love-area-title">FIND <em>team</em></div>
-          <h3>ISMERKEDJ MEG VELÜNK!</h3>
-          <p>A kampány mögött álló emberek. Válassz egy profilt a részletes bemutatkozáshoz.</p>
-          <div class="love-category-label">KAMPÁNY / PROFILOK</div>
-          <a href="#programom" class="love-pill">Programunk ›</a>
-          <a href="#megjelenesek" class="love-pill">Eddigi munkánk ›</a>
-          <p class="love-disclaimer">A csapatprofilok jelenleg helykitöltő adatokkal szerepelnek; a végleges neveket és fényképeket később állítjuk be.</p>
-        </aside>
-        <div class="love-results">
-          <div class="love-area-title">TRUE <em>team</em><span> / VÁLASSZ PROFILT</span></div>
-          <div class="love-intro-row"><strong>Tagjaink</strong><span>Kattints egy kártyára a részletekért</span></div>
-          <div id="team-grid" class="team-grid love-team-grid" aria-label="A kampánycsapat tagjai"></div>
+  <div class="page">
+    <header class="page-header">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><span>RICSI <em>A HÖK-ÉRT</em></span></div>
+      <span class="page-header-label">KAMPÁNYGALÉRIA <span aria-hidden="true">/</span> GDE</span>
+    </header>
+    <main class="page-main" id="main">
+      <section class="image-modal story-reader" aria-label="Kampánygaléria – képek és történetek">
+        <div class="modal-top">
+          <span id="modal-caption">Kampányhangulat</span>
+          <span class="story-progress" id="story-progress" aria-live="polite">01 / 05</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section aria-labelledby="gallery-title" class="gallery gallery-spotlight gallery-flip-screen" id="galeria">
-  <div class="container gallery-layout">
-    <div class="gallery-intro">
-      <div class="gallery-intro-copy">
-        <p class="section-kicker">06 / KAMPÁNY</p>
-        <h2 class="brush-heading" id="gallery-title">Kampánygaléria</h2>
-        <p>Kattints bármelyik képre: rövid információs kártyává fordul, majd újabb kattintással vissza.</p>
-      </div>
-      <div class="gallery-controls" aria-label="Fő kampánykép váltása">
-        <button aria-label="Előző fő kampánykép" class="arrow-btn" id="gallery-prev" type="button">‹</button>
-        <button aria-label="Következő fő kampánykép" class="arrow-btn" id="gallery-next" type="button">›</button>
-      </div>
-      <p class="gallery-hint">A képeket teljes egészükben mutatjuk; szükség esetén csak ez a galériaképernyő görgethető.</p>
-    </div>
-    <div class="gallery-viewport" id="gallery-scroll" aria-label="Kampánygaléria – nagy kép és négy képkártya">
-      <button type="button" id="gallery-feature" class="gallery-flip gallery-feature" data-gallery-index="0" aria-pressed="false" aria-label="Kampányhangulat – fordítás az információs kártyára" title="Kampányhangulat – kattints a megfordításhoz">
-  <span class="gallery-flip-core">
-    <span class="gallery-face gallery-front">
-      <img src="assets/street-mercedes.webp" alt="GTA IV hangulatú utcai kampányfotó egy autó előtt" loading="eager" fetchpriority="high"/>
-      <span class="gallery-front-caption"><span class="gallery-card-number">01 / 05</span><strong>Kampányhangulat</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
-    </span>
-    <span class="gallery-face gallery-back" aria-hidden="true">
-      <span class="gallery-back-kicker">01 / FŐ KÉP</span>
-      <strong class="gallery-back-title">Kampányhangulat</strong>
-      <span class="gallery-back-description">Utcai, GTA IV hangulatú vizuál a kampányhoz.</span>
-      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
-    </span>
-  </span>
- </button>
-      <div class="gallery-grid" aria-label="Négy további kampánykép">
-        <button type="button"  class="gallery-flip gallery-thumb" data-gallery-index="1" aria-pressed="false" aria-label="Egyetemi portré – fordítás az információs kártyára" title="Egyetemi portré – kattints a megfordításhoz">
-  <span class="gallery-flip-core">
-    <span class="gallery-face gallery-front">
-      <img src="assets/campus-maroon.webp" alt="Illusztrált portré bordó ingben a Gábor Dénes Egyetem előtt" loading="lazy"/>
-      <span class="gallery-front-caption"><span class="gallery-card-number">02 / 05</span><strong>Egyetemi portré</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
-    </span>
-    <span class="gallery-face gallery-back" aria-hidden="true">
-      <span class="gallery-back-kicker">02 / PORTRÉ</span>
-      <strong class="gallery-back-title">Egyetemi portré</strong>
-      <span class="gallery-back-description">Illusztrált portré egyetemi háttérrel.</span>
-      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
-    </span>
-  </span>
- </button>
-<button type="button"  class="gallery-flip gallery-thumb" data-gallery-index="2" aria-pressed="false" aria-label="Hallgatói üzenet – fordítás az információs kártyára" title="Hallgatói üzenet – kattints a megfordításhoz">
-  <span class="gallery-flip-core">
-    <span class="gallery-face gallery-front">
-      <img src="assets/campus-purple.webp" alt="Illusztrált portré Gábor Dénes szobránál" loading="lazy"/>
-      <span class="gallery-front-caption"><span class="gallery-card-number">03 / 05</span><strong>Hallgatói üzenet</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
-    </span>
-    <span class="gallery-face gallery-back" aria-hidden="true">
-      <span class="gallery-back-kicker">03 / ÜZENET</span>
-      <strong class="gallery-back-title">Hallgatói üzenet</strong>
-      <span class="gallery-back-description">Személyes kampányillusztráció a szobornál.</span>
-      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
-    </span>
-  </span>
- </button>
-<button type="button"  class="gallery-flip gallery-thumb" data-gallery-index="3" aria-pressed="false" aria-label="Új nézőpont – fordítás az információs kártyára" title="Új nézőpont – kattints a megfordításhoz">
-  <span class="gallery-flip-core">
-    <span class="gallery-face gallery-front">
-      <img src="assets/campus-pattern.webp" alt="Illusztrált portré mintás felsőben az egyetem mellett" loading="lazy"/>
-      <span class="gallery-front-caption"><span class="gallery-card-number">04 / 05</span><strong>Új nézőpont</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
-    </span>
-    <span class="gallery-face gallery-back" aria-hidden="true">
-      <span class="gallery-back-kicker">04 / KAMPÁNY</span>
-      <strong class="gallery-back-title">Új nézőpont</strong>
-      <span class="gallery-back-description">Kampánykép egy másik megjelenéssel.</span>
-      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
-    </span>
-  </span>
- </button>
-<button type="button"  class="gallery-flip gallery-thumb" data-gallery-index="4" aria-pressed="false" aria-label="Fókuszban a cél – fordítás az információs kártyára" title="Fókuszban a cél – kattints a megfordításhoz">
-  <span class="gallery-flip-core">
-    <span class="gallery-face gallery-front">
-      <img src="assets/campus-brown.webp" alt="Illusztrált portré barna kabátban, egyetemi háttérrel" loading="lazy"/>
-      <span class="gallery-front-caption"><span class="gallery-card-number">05 / 05</span><strong>Fókuszban a cél</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
-    </span>
-    <span class="gallery-face gallery-back" aria-hidden="true">
-      <span class="gallery-back-kicker">05 / PORTRÉ</span>
-      <strong class="gallery-back-title">Fókuszban a cél</strong>
-      <span class="gallery-back-description">Portré az egyetem környezetében.</span>
-      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
-    </span>
-  </span>
- </button>
-      </div>
-    </div>
-  </div>
-</section>
-<section aria-labelledby="cta-title" class="cta-section" id="kapcsolat">
-<img class="season-pumpkin" src="assets/jack-o-lantern.svg" alt="" aria-hidden="true" loading="lazy"/>
-<img class="halloween-cta-ghost halloween-only" src="assets/ghost-white.svg" alt="" aria-hidden="true" loading="lazy"/>
-<div class="container cta-layout"><div><p class="section-kicker">07 / A TE HANGOD IS SZÁMÍT</p><h2 id="cta-title">Lorem ipsum.<br/>Dolor sit amet!</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Praesent commodo ligula sed quam lacinia.</p></div><div class="cta-actions"><button class="btn btn-cream" id="share-btn" type="button">Oszd meg az oldalt <span aria-hidden="true">↗</span></button><button class="btn btn-dark" id="contact-btn" type="button">Írj nekem <span aria-hidden="true">›</span></button><a class="btn btn-outline optional-link" hidden="" href="#" id="vote-link" rel="noopener noreferrer" target="_blank">Hivatalos szavazási információk <span aria-hidden="true">↗</span></a><div aria-label="Kampány közösségi oldalai" class="social-links" id="social-links"></div><p aria-live="polite" class="contact-notice" id="contact-notice" role="status"></p></div></div>
-</section>
-</main>
-<div class="game-footer" id="game-footer">
- <span class="game-footer-label">GDE / HALLGATÓI KAMPÁNY <span class="game-footer-sep">/</span> <span id="game-screen-label">FŐOLDAL</span></span>
- <div class="game-footer-actions"><span><kbd>←</kbd><kbd>→</kbd> MENÜ</span><span><kbd>ENTER</kbd> KIVÁLASZTÁS</span><button type="button" id="game-back"><kbd>ESC</kbd> VISSZA</button></div>
-</div>
-<footer class="site-footer"><div class="container footer-layout"><a class="footer-brand" href="#top"><span aria-hidden="true" class="footer-symbol">✦</span><span>GÁBOR DÉNES EGYETEM</span></a><span aria-hidden="true" class="footer-separator"></span><span>Ricsi a HÖK-ért</span><span class="footer-note">Független hallgatói kampányoldal, nem hivatalos egyetemi webhely.</span><a aria-label="Vissza az oldal tetejére" class="footer-up" href="#top">↑</a></div></footer>
-<dialog aria-labelledby="modal-caption" class="image-modal" id="image-modal">
-<div class="modal-top"><span id="modal-caption"></span><button aria-label="Ablak bezárása" class="modal-close" id="modal-close" type="button">✕</button></div>
-<div class="modal-content">
-<div class="modal-media"><img alt="" id="modal-image" loading="eager"/><div class="modal-navigation"><button aria-label="Előző történet" class="modal-nav-btn" id="modal-prev" type="button">‹ Előző</button><button aria-label="Következő történet" class="modal-nav-btn" id="modal-next" type="button">Következő ›</button></div></div>
-<article aria-label="A képhez kapcsolódó történet" class="modal-story" id="modal-story"></article>
-</div>
-</dialog>
-
-<dialog class="team-modal" id="team-modal" aria-labelledby="team-modal-name">
-  <div class="team-modal-toolbar">
-    <span class="team-modal-eyebrow">CSAPATOM / PROFIL</span>
-    <button type="button" class="modal-close" id="team-modal-close" aria-label="Profil bezárása">✕</button>
-  </div>
-  <div class="team-modal-layout">
-    <div class="team-modal-visual" id="team-modal-visual">
-      <img src="assets/team-placeholder.svg" id="team-modal-photo" alt=""/>
-      <span class="team-modal-visual-label" id="team-modal-visual-label">PROFIL / 01</span>
-    </div>
-    <article class="team-modal-copy">
-      <p class="section-kicker" id="team-modal-role">LOREM IPSUM</p>
-      <h2 id="team-modal-name">Csapattag</h2>
-      <p id="team-modal-lead" class="team-modal-lead"></p>
-      <div class="team-modal-bio" id="team-modal-bio"></div>
-      <div class="team-modal-focus" id="team-modal-focus"></div>
-      <div class="team-modal-links" id="team-modal-links"></div>
-      <div class="team-modal-pager">
-        <button type="button" class="team-pager-btn" id="team-prev" aria-label="Előző csapattag">‹ Előző</button>
-        <button type="button" class="team-pager-btn" id="team-next" aria-label="Következő csapattag">Következő ›</button>
-      </div>
-    </article>
-  </div>
-</dialog>
-<template id="story-campaign"><p class="story-kicker">01 / LOREM IPSUM</p>
+        <div class="modal-content">
+          <div class="modal-media">
+            <div class="image-frame">
+              <img src="assets/street-mercedes.webp" alt="Kampányfotó egy Mercedes autónál" id="modal-image" fetchpriority="high"/>
+            </div>
+            <div class="modal-navigation" aria-label="Lapozás a kampányképek között">
+              <button class="modal-nav-btn" id="modal-prev" type="button" aria-label="Előző kép és történet">‹ Előző</button>
+              <span id="nav-index" class="nav-index">1 / 5</span>
+              <button class="modal-nav-btn" id="modal-next" type="button" aria-label="Következő kép és történet">Következő ›</button>
+            </div>
+          </div>
+          <article class="modal-story" id="modal-story" aria-label="A képhez tartozó történet" aria-live="polite">
+            <p class="story-kicker">01 / LOREM IPSUM</p>
 <h3>Lorem ipsum dolor sit amet, consectetur.</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit lectus felis, a bibendum nisl sodales ut. Praesent mollis euismod massa, id blandit odio faucibus non. Mauris sit amet luctus magna.</p>
 <p>Integer accumsan, ex quis elementum vulputate, turpis orci porttitor augue, vel sodales nisl orci non ipsum. Vivamus eget facilisis nunc. Etiam posuere, nisi et porttitor malesuada, arcu magna tincidunt eros, sed congue erat nulla at est.</p>
 <h4>Dolor sit amet</h4>
 <ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Praesent tincidunt neque ac risus vestibulum, vitae varius ligula dictum.</li><li>Donec sodales urna quis mi iaculis tempor.</li></ul>
-<a class="story-link" href="#programom">Programom ↗</a></template>
+
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <span>GDE / FÜGGETLEN HALLGATÓI KAMPÁNYOLDAL</span>
+      <span>A részletes kampányszövegek még szerkesztés alatt.</span>
+      <span class="key-tip">← → KÉPVÁLTÁS</span>
+    </footer>
+  </div>
+  <template id="story-campaign"><p class="story-kicker">01 / LOREM IPSUM</p>
+<h3>Lorem ipsum dolor sit amet, consectetur.</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit lectus felis, a bibendum nisl sodales ut. Praesent mollis euismod massa, id blandit odio faucibus non. Mauris sit amet luctus magna.</p>
+<p>Integer accumsan, ex quis elementum vulputate, turpis orci porttitor augue, vel sodales nisl orci non ipsum. Vivamus eget facilisis nunc. Etiam posuere, nisi et porttitor malesuada, arcu magna tincidunt eros, sed congue erat nulla at est.</p>
+<h4>Dolor sit amet</h4>
+<ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Praesent tincidunt neque ac risus vestibulum, vitae varius ligula dictum.</li><li>Donec sodales urna quis mi iaculis tempor.</li></ul>
+</template>
 <template id="story-university"><p class="story-kicker">02 / LOREM IPSUM</p>
 <h3>Lorem ipsum dolor sit amet, consectetur.</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit lectus felis, a bibendum nisl sodales ut. Praesent mollis euismod massa, id blandit odio faucibus non. Mauris sit amet luctus magna.</p>
 <p>Integer accumsan, ex quis elementum vulputate, turpis orci porttitor augue, vel sodales nisl orci non ipsum. Vivamus eget facilisis nunc. Etiam posuere, nisi et porttitor malesuada, arcu magna tincidunt eros, sed congue erat nulla at est.</p>
 <h4>Dolor sit amet</h4>
 <ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Praesent tincidunt neque ac risus vestibulum, vitae varius ligula dictum.</li><li>Donec sodales urna quis mi iaculis tempor.</li></ul>
-<a class="story-link" href="#programom">Programom ↗</a></template>
+</template>
 <template id="story-digital"><p class="story-kicker">03 / LOREM IPSUM</p>
 <h3>Lorem ipsum dolor sit amet, consectetur.</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit lectus felis, a bibendum nisl sodales ut. Praesent mollis euismod massa, id blandit odio faucibus non. Mauris sit amet luctus magna.</p>
 <p>Integer accumsan, ex quis elementum vulputate, turpis orci porttitor augue, vel sodales nisl orci non ipsum. Vivamus eget facilisis nunc. Etiam posuere, nisi et porttitor malesuada, arcu magna tincidunt eros, sed congue erat nulla at est.</p>
 <h4>Dolor sit amet</h4>
 <ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Praesent tincidunt neque ac risus vestibulum, vitae varius ligula dictum.</li><li>Donec sodales urna quis mi iaculis tempor.</li></ul>
-<a class="story-link" href="#programom">Programom ↗</a></template>
+</template>
 <template id="story-dialogue"><p class="story-kicker">04 / LOREM IPSUM</p>
 <h3>Lorem ipsum dolor sit amet, consectetur.</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit lectus felis, a bibendum nisl sodales ut. Praesent mollis euismod massa, id blandit odio faucibus non. Mauris sit amet luctus magna.</p>
 <p>Integer accumsan, ex quis elementum vulputate, turpis orci porttitor augue, vel sodales nisl orci non ipsum. Vivamus eget facilisis nunc. Etiam posuere, nisi et porttitor malesuada, arcu magna tincidunt eros, sed congue erat nulla at est.</p>
 <h4>Dolor sit amet</h4>
 <ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Praesent tincidunt neque ac risus vestibulum, vitae varius ligula dictum.</li><li>Donec sodales urna quis mi iaculis tempor.</li></ul>
-<a class="story-link" href="#programom">Programom ↗</a></template>
+</template>
 <template id="story-priorities"><p class="story-kicker">05 / LOREM IPSUM</p>
 <h3>Lorem ipsum dolor sit amet, consectetur.</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit lectus felis, a bibendum nisl sodales ut. Praesent mollis euismod massa, id blandit odio faucibus non. Mauris sit amet luctus magna.</p>
 <p>Integer accumsan, ex quis elementum vulputate, turpis orci porttitor augue, vel sodales nisl orci non ipsum. Vivamus eget facilisis nunc. Etiam posuere, nisi et porttitor malesuada, arcu magna tincidunt eros, sed congue erat nulla at est.</p>
 <h4>Dolor sit amet</h4>
 <ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Praesent tincidunt neque ac risus vestibulum, vitae varius ligula dictum.</li><li>Donec sodales urna quis mi iaculis tempor.</li></ul>
-<a class="story-link" href="#programom">Programom ↗</a></template>
-<div aria-live="polite" class="toast" id="toast" role="status"></div>
+</template>
 </body>
 </html>
