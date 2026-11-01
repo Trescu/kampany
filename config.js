@@ -9,8 +9,8 @@
  * Közösségi oldalak: socialLinks.instagram/facebook/tiktok/linkedin
  */
 window.CAMPAIGN_CONFIG = {
-  // Automatic theme: Halloween every year from October 20 through November 2.
-  // "auto" | "halloween" | "classic". Use ?theme=classic / ?theme=halloween to preview.
+  // Manually switched from the navbar. Default is the GTA-style classic skin.
+  // The visitor can also use ?theme=classic / ?theme=halloween to preview.
   theme: { mode: "classic", halloweenFrom: "10-20", halloweenThrough: "11-02", timeZone: "Europe/Budapest" },
   contactEmail: "",
   contactSubject: "Hallgatói javaslat – HÖK kampány",
