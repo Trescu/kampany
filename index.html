@@ -8,8 +8,8 @@
   <title>Ricsi a HÖK-ért | Kampánygaléria</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
   <link rel="preload" as="image" href="assets/street-mercedes.webp"/>
-  <link rel="stylesheet" href="gallery-page.css?v=1"/>
-  <script defer src="gallery-page.js?v=1"></script>
+  <link rel="stylesheet" href="gallery-page.css?v=2"/>
+  <script defer src="gallery-page.js?v=2"></script>
 </head>
 <body>
   <div class="page">
@@ -18,38 +18,44 @@
       <span class="page-header-label">KAMPÁNYGALÉRIA <span aria-hidden="true">/</span> GDE</span>
     </header>
     <main class="page-main" id="main">
-      <section class="image-modal story-reader" aria-label="Kampánygaléria – képek és történetek">
+      <section class="image-modal story-reader" id="story-reader" data-mobile-view="image" aria-label="Kampánygaléria – képek és történetek">
         <div class="modal-top">
           <span id="modal-caption">Kampányhangulat</span>
-          <span class="story-progress" id="story-progress" aria-live="polite">01 / 05</span>
+          <div class="reader-toolbar">
+    <div class="view-switch" role="group" aria-label="Mobil megjelenítés">
+      <button type="button" class="view-button is-active" id="view-image" aria-pressed="true">Kép</button>
+      <button type="button" class="view-button" id="view-text" aria-pressed="false">Történet</button>
+    </div>
+    <span class="story-progress" id="story-progress" aria-live="polite">01 / 05</span>
+  </div>
         </div>
         <div class="modal-content">
           <div class="modal-media">
             <div class="image-frame">
               <img src="assets/street-mercedes.webp" alt="Kampányfotó egy Mercedes autónál" id="modal-image" fetchpriority="high"/>
             </div>
-            <div class="modal-navigation" aria-label="Lapozás a kampányképek között">
+
+          </div>
+          <article class="modal-story" id="modal-story" aria-label="A képhez tartozó történet">
+            <div class="story-copy" id="story-copy"></div>
+            <div class="story-pagination" id="story-pagination" aria-label="Történet lapozása">
+              <button type="button" class="story-page-btn" id="story-prev" aria-label="Előző szövegoldal">‹</button>
+              <span id="story-page-info" aria-live="polite">1 / 1</span>
+              <button type="button" class="story-page-btn" id="story-next" aria-label="Következő szövegoldal">›</button>
+            </div>
+          </article>
+        </div>
+                    <div class="modal-navigation" aria-label="Lapozás a kampányképek között">
               <button class="modal-nav-btn" id="modal-prev" type="button" aria-label="Előző kép és történet">‹ Előző</button>
               <span id="nav-index" class="nav-index">1 / 5</span>
               <button class="modal-nav-btn" id="modal-next" type="button" aria-label="Következő kép és történet">Következő ›</button>
             </div>
-          </div>
-          <article class="modal-story" id="modal-story" aria-label="A képhez tartozó történet" aria-live="polite">
-            <p class="story-kicker">01 / LOREM IPSUM</p>
-<h3>Lorem ipsum dolor sit amet, consectetur.</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit lectus felis, a bibendum nisl sodales ut. Praesent mollis euismod massa, id blandit odio faucibus non. Mauris sit amet luctus magna.</p>
-<p>Integer accumsan, ex quis elementum vulputate, turpis orci porttitor augue, vel sodales nisl orci non ipsum. Vivamus eget facilisis nunc. Etiam posuere, nisi et porttitor malesuada, arcu magna tincidunt eros, sed congue erat nulla at est.</p>
-<h4>Dolor sit amet</h4>
-<ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Praesent tincidunt neque ac risus vestibulum, vitae varius ligula dictum.</li><li>Donec sodales urna quis mi iaculis tempor.</li></ul>
-
-          </article>
-        </div>
       </section>
     </main>
     <footer class="page-footer">
       <span>GDE / FÜGGETLEN HALLGATÓI KAMPÁNYOLDAL</span>
       <span>A részletes kampányszövegek még szerkesztés alatt.</span>
-      <span class="key-tip">← → KÉPVÁLTÁS</span>
+      <span class="key-tip">← → KÉPVÁLTÁS · SZÖVEG LAPOZÁSA GOMBOKKAL</span>
     </footer>
   </div>
   <template id="story-campaign"><p class="story-kicker">01 / LOREM IPSUM</p>

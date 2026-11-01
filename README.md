@@ -18,3 +18,6 @@ A régi történetsablonok **eredeti, Lorem ipsum helykitöltő szövegei** mara
 
 ## Képi működés
 Asztali nézeten balra nagy kép, jobbra hosszabb blogszöveg, mobilon egymás alatt. A képek `object-fit: contain` beállítással, levágás nélkül jelennek meg. Az `Előző` / `Következő` gombok egy új kép+szöveg párost töltenek be. A használat nem igényel JavaScript buildet vagy külső függőséget.
+
+## Képernyőmagassághoz igazítás (v2)
+A galéria a böngésző látható területét tölti ki (`100dvh`), nem görgethető. A fotó `object-fit: contain` beállítással levágás nélkül tölti ki a rendelkezésre álló teret. A hosszú blogszöveg a jobb oldali oszlopban oldalakra oszlik; a szöveg alatt külön lapozó van. Mobilon a `Kép` és `Történet` nézet váltása teszi lehetővé a teljes képernyős, görgetés nélküli használatot. A képváltó gombok folyamatosan láthatók.
