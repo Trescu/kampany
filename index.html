@@ -26,7 +26,7 @@
 <link href="game-shell.css?v=1" rel="stylesheet"/>
 <link href="why-settings.css?v=1" rel="stylesheet"/>
 <link href="program-stats.css?v=1" rel="stylesheet"/>
-<link href="gallery-spotlight.css?v=1" rel="stylesheet"/>
+<link href="gallery-spotlight.css?v=2" rel="stylesheet"/>
 <script defer src="script.js"></script>
 <script defer src="game-shell.js?v=1"></script>
 <script defer src="why-settings.js?v=1"></script>
@@ -194,63 +194,95 @@
     </div>
   </div>
 </section>
-<section aria-labelledby="gallery-title" class="gallery gallery-spotlight" id="galeria">
-<div class="container gallery-layout">
-  <div class="gallery-intro">
-    <div class="gallery-intro-copy">
-      <p class="section-kicker">06 / KAMPÁNY</p>
-      <h2 class="brush-heading" id="gallery-title">Kampánygaléria</h2>
-      <p>A kampány képekben. Válassz a négy alsó fotó közül, vagy nyisd meg a nagy képet a részletes nézethez.</p>
+<section aria-labelledby="gallery-title" class="gallery gallery-spotlight gallery-flip-screen" id="galeria">
+  <div class="container gallery-layout">
+    <div class="gallery-intro">
+      <div class="gallery-intro-copy">
+        <p class="section-kicker">06 / KAMPÁNY</p>
+        <h2 class="brush-heading" id="gallery-title">Kampánygaléria</h2>
+        <p>A képek mesélnek a kampányról. Kattints bármelyikre: átfordul egy rövid információs kártyává. Még egyszer kattintva visszatér a fotó.</p>
+      </div>
+      <div class="gallery-controls" aria-label="Fő kampánykép váltása">
+        <button aria-label="Előző fő kampánykép" class="arrow-btn" id="gallery-prev" type="button">‹</button>
+        <button aria-label="Következő fő kampánykép" class="arrow-btn" id="gallery-next" type="button">›</button>
+      </div>
+      <p class="gallery-hint">Kattintás vagy Enter: megfordítás. A nyilakkal a nagy kép váltható; az alsó négy fotó külön is megfordítható.</p>
     </div>
-    <div class="gallery-controls">
-      <button aria-label="Előző kampánykép" class="arrow-btn" id="gallery-prev" type="button">‹</button>
-      <button aria-label="Következő kampánykép" class="arrow-btn" id="gallery-next" type="button">›</button>
+    <div class="gallery-viewport" id="gallery-scroll" aria-label="Kampánygaléria – nagy kép és négy képkártya">
+      <button type="button" id="gallery-feature" class="gallery-flip gallery-feature" data-gallery-index="0" aria-pressed="false" aria-label="Kampányhangulat – fordítás az információs kártyára" title="Kampányhangulat – kattints a megfordításhoz">
+  <span class="gallery-flip-core">
+    <span class="gallery-face gallery-front">
+      <img src="assets/street-mercedes.webp" alt="GTA IV hangulatú utcai kampányfotó egy autó előtt" loading="eager" fetchpriority="high"/>
+      <span class="gallery-front-caption"><span class="gallery-card-number">01 / 05</span><strong>Kampányhangulat</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
+    </span>
+    <span class="gallery-face gallery-back" aria-hidden="true">
+      <span class="gallery-back-kicker">01 / FŐ KÉP</span>
+      <strong class="gallery-back-title">Kampányhangulat</strong>
+      <span class="gallery-back-description">Utcai, GTA IV hangulatú vizuál a kampányhoz.</span>
+      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
+    </span>
+  </span>
+ </button>
+      <div class="gallery-grid" aria-label="Négy további kampánykép">
+        <button type="button"  class="gallery-flip gallery-thumb" data-gallery-index="1" aria-pressed="false" aria-label="Egyetemi portré – fordítás az információs kártyára" title="Egyetemi portré – kattints a megfordításhoz">
+  <span class="gallery-flip-core">
+    <span class="gallery-face gallery-front">
+      <img src="assets/campus-maroon.webp" alt="Illusztrált portré bordó ingben a Gábor Dénes Egyetem előtt" loading="lazy"/>
+      <span class="gallery-front-caption"><span class="gallery-card-number">02 / 05</span><strong>Egyetemi portré</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
+    </span>
+    <span class="gallery-face gallery-back" aria-hidden="true">
+      <span class="gallery-back-kicker">02 / PORTRÉ</span>
+      <strong class="gallery-back-title">Egyetemi portré</strong>
+      <span class="gallery-back-description">Illusztrált portré egyetemi háttérrel.</span>
+      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
+    </span>
+  </span>
+ </button>
+<button type="button"  class="gallery-flip gallery-thumb" data-gallery-index="2" aria-pressed="false" aria-label="Hallgatói üzenet – fordítás az információs kártyára" title="Hallgatói üzenet – kattints a megfordításhoz">
+  <span class="gallery-flip-core">
+    <span class="gallery-face gallery-front">
+      <img src="assets/campus-purple.webp" alt="Illusztrált portré Gábor Dénes szobránál" loading="lazy"/>
+      <span class="gallery-front-caption"><span class="gallery-card-number">03 / 05</span><strong>Hallgatói üzenet</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
+    </span>
+    <span class="gallery-face gallery-back" aria-hidden="true">
+      <span class="gallery-back-kicker">03 / ÜZENET</span>
+      <strong class="gallery-back-title">Hallgatói üzenet</strong>
+      <span class="gallery-back-description">Személyes kampányillusztráció a szobornál.</span>
+      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
+    </span>
+  </span>
+ </button>
+<button type="button"  class="gallery-flip gallery-thumb" data-gallery-index="3" aria-pressed="false" aria-label="Új nézőpont – fordítás az információs kártyára" title="Új nézőpont – kattints a megfordításhoz">
+  <span class="gallery-flip-core">
+    <span class="gallery-face gallery-front">
+      <img src="assets/campus-pattern.webp" alt="Illusztrált portré mintás felsőben az egyetem mellett" loading="lazy"/>
+      <span class="gallery-front-caption"><span class="gallery-card-number">04 / 05</span><strong>Új nézőpont</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
+    </span>
+    <span class="gallery-face gallery-back" aria-hidden="true">
+      <span class="gallery-back-kicker">04 / KAMPÁNY</span>
+      <strong class="gallery-back-title">Új nézőpont</strong>
+      <span class="gallery-back-description">Kampánykép egy másik megjelenéssel.</span>
+      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
+    </span>
+  </span>
+ </button>
+<button type="button"  class="gallery-flip gallery-thumb" data-gallery-index="4" aria-pressed="false" aria-label="Fókuszban a cél – fordítás az információs kártyára" title="Fókuszban a cél – kattints a megfordításhoz">
+  <span class="gallery-flip-core">
+    <span class="gallery-face gallery-front">
+      <img src="assets/campus-brown.webp" alt="Illusztrált portré barna kabátban, egyetemi háttérrel" loading="lazy"/>
+      <span class="gallery-front-caption"><span class="gallery-card-number">05 / 05</span><strong>Fókuszban a cél</strong><span class="gallery-flip-cue" aria-hidden="true">↻</span></span>
+    </span>
+    <span class="gallery-face gallery-back" aria-hidden="true">
+      <span class="gallery-back-kicker">05 / PORTRÉ</span>
+      <strong class="gallery-back-title">Fókuszban a cél</strong>
+      <span class="gallery-back-description">Portré az egyetem környezetében.</span>
+      <span class="gallery-back-return" aria-hidden="true">↶ VISSZAFORDÍTÁS</span>
+    </span>
+  </span>
+ </button>
+      </div>
     </div>
-    <p class="gallery-hint">Öt kampánykép egy képernyőn. A kiválasztott fotó felül nagy méretben jelenik meg.</p>
   </div>
-  <div class="gallery-viewport" id="gallery-scroll" aria-label="Kampánygaléria – egy nagy kép és négy előnézet">
-    <button class="gallery-feature gallery-card" id="gallery-feature" type="button" aria-haspopup="dialog" aria-label="Kampányhangulat – kép és történet megnyitása"
-      data-gallery-index="0" data-full="assets/street-mercedes.webp" data-story="story-campaign"
-      data-gallery-title="Kampányhangulat" data-gallery-caption="GTA IV ihletésű kampányfotó">
-      <img id="gallery-feature-image" src="assets/street-mercedes.webp" alt="Utcai kampányfotó egy Mercedes előtt" loading="eager"/>
-      <span class="gallery-feature-text">
-        <strong id="gallery-feature-title"><i aria-hidden="true">»</i> Kampányhangulat</strong>
-        <small id="gallery-feature-caption">GTA IV ihletésű kampányfotó</small>
-      </span>
-      <span class="gallery-feature-open" aria-hidden="true">NAGYÍTÁS ↗</span>
-    </button>
-    <div class="gallery-grid" aria-label="Négy további kampánykép">
-      <button class="gallery-thumb gallery-card" type="button"
-        data-gallery-index="1" data-full="assets/campus-maroon.webp" data-story="story-university"
-        data-gallery-title="Egyetemi portré" data-gallery-caption="Portré a Gábor Dénes Egyetem előtt"
-        aria-label="Egyetemi portré – kiválasztás a nagy képhez">
-        <img src="assets/campus-maroon.webp" loading="lazy" alt="Illusztrált portré az egyetem előtt, bordó ingben"/>
-        <span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Egyetemi portré</strong><small>GDE / kampány</small></span>
-      </button>
-      <button class="gallery-thumb gallery-card" type="button"
-        data-gallery-index="2" data-full="assets/campus-purple.webp" data-story="story-digital"
-        data-gallery-title="Hallgatói üzenet" data-gallery-caption="Illusztrált kampánykép a Gábor Dénes-szobornál"
-        aria-label="Hallgatói üzenet – kiválasztás a nagy képhez">
-        <img src="assets/campus-purple.webp" loading="lazy" alt="Illusztrált portré Gábor Dénes szobránál"/>
-        <span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Hallgatói üzenet</strong><small>GDE / kampány</small></span>
-      </button>
-      <button class="gallery-thumb gallery-card" type="button"
-        data-gallery-index="3" data-full="assets/campus-pattern.webp" data-story="story-dialogue"
-        data-gallery-title="Új nézőpont" data-gallery-caption="Illusztrált kampánykép mintás felsőben"
-        aria-label="Új nézőpont – kiválasztás a nagy képhez">
-        <img src="assets/campus-pattern.webp" loading="lazy" alt="Illusztrált portré mintás felsőben az egyetem mellett"/>
-        <span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Új nézőpont</strong><small>GDE / kampány</small></span>
-      </button>
-      <button class="gallery-thumb gallery-card" type="button"
-        data-gallery-index="4" data-full="assets/campus-brown.webp" data-story="story-priorities"
-        data-gallery-title="Fókuszban a cél" data-gallery-caption="Illusztrált portré egyetemi háttérrel"
-        aria-label="Fókuszban a cél – kiválasztás a nagy képhez">
-        <img src="assets/campus-brown.webp" loading="lazy" alt="Illusztrált portré barna kabátban, egyetemi háttérrel"/>
-        <span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Fókuszban a cél</strong><small>GDE / kampány</small></span>
-      </button>
-    </div>
-  </div>
-</div>
 </section>
 <section aria-labelledby="cta-title" class="cta-section" id="kapcsolat">
 <img class="season-pumpkin" src="assets/jack-o-lantern.svg" alt="" aria-hidden="true" loading="lazy"/>

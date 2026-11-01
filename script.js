@@ -39,105 +39,55 @@
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
   window.addEventListener('resize', () => { if (window.innerWidth > 1120) closeMenu(); });
 
-  // Five original gallery assets; one large preview and four selectable thumbnails.
+  // Unified card flip interaction: the entire gallery is image-first.
+  // No separate image modal is used: click or Enter flips an image to a compact info card.
   const gallery = $('#gallery-scroll');
-  const cards = [...(gallery?.querySelectorAll('.gallery-card') || [])];
-  const featured = $('#gallery-feature');
-  const featureImage = $('#gallery-feature-image');
-  const featureTitle = $('#gallery-feature-title');
-  const featureCaption = $('#gallery-feature-caption');
-  const galleryItems = cards.map(card => ({
-    full: card.dataset.full || '',
-    story: card.dataset.story || '',
-    title: card.dataset.galleryTitle || card.querySelector('strong')?.textContent?.trim() || 'Kampánykép',
-    caption: card.dataset.galleryCaption || card.querySelector('small')?.textContent?.trim() || '',
-    alt: card.querySelector('img')?.alt || 'Kampánykép'
-  }));
-  let selectedGalleryIndex = 0;
-  const selectGalleryImage = index => {
-    if (!galleryItems.length || !featured || !featureImage) return;
-    selectedGalleryIndex = (index + galleryItems.length) % galleryItems.length;
-    const item = galleryItems[selectedGalleryIndex];
-    featureImage.src = item.full;
-    featureImage.alt = item.alt;
-    featured.dataset.full = item.full;
-    featured.dataset.story = item.story;
-    featured.dataset.galleryIndex = String(selectedGalleryIndex);
-    featured.setAttribute('aria-label', item.title + ' – kép és történet megnyitása');
-    if (featureTitle) featureTitle.textContent = '» ' + item.title;
-    if (featureCaption) featureCaption.textContent = item.caption;
-    cards.forEach((card, i) => {
-      const current = i === selectedGalleryIndex;
-      card.classList.toggle('is-current', current);
-      if (i > 0) card.setAttribute('aria-pressed', String(current));
-    });
-  };
-  $('#gallery-prev')?.addEventListener('click', () => selectGalleryImage(selectedGalleryIndex - 1));
-  $('#gallery-next')?.addEventListener('click', () => selectGalleryImage(selectedGalleryIndex + 1));
-
-  // Existing full-screen image/story dialog retained.
-  const dialog = $('#image-modal');
-  const modalImage = $('#modal-image');
-  const modalCaption = $('#modal-caption');
-  const modalStory = $('#modal-story');
-  const modalClose = $('#modal-close');
-  let activeCardIndex = 0;
-  let lastTrigger = null;
-  const populateStory = index => {
-    if (!galleryItems.length || !modalImage || !modalStory) return;
-    activeCardIndex = (index + galleryItems.length) % galleryItems.length;
-    const item = galleryItems[activeCardIndex];
-    modalImage.src = item.full;
-    modalImage.alt = item.alt;
-    modalCaption.textContent = item.title;
-    const template = document.getElementById(item.story);
-    modalStory.replaceChildren(template?.content.cloneNode(true) || document.createTextNode('A történet még nincs megadva.'));
-    dialog?.scrollTo(0, 0);
-    modalStory.scrollTop = 0;
-  };
-  const openStory = (index, trigger) => {
-    if (!galleryItems.length) return;
-    const safeIndex = (index + galleryItems.length) % galleryItems.length;
-    if (!dialog?.showModal) {
-      window.open(galleryItems[safeIndex].full, '_blank', 'noopener');
-      return;
-    }
-    lastTrigger = trigger || featured;
-    populateStory(safeIndex);
-    dialog.showModal();
-    modalClose?.focus();
-  };
-  const changeStory = direction => populateStory(activeCardIndex + direction);
-  featured?.addEventListener('click', () => openStory(selectedGalleryIndex, featured));
-  cards.slice(1).forEach((card, i) => card.addEventListener('click', () => {
-    selectGalleryImage(i + 1);
-  }));
-  gallery?.addEventListener('keydown', event => {
-    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-    if (!event.target.closest('.gallery-card')) return;
-    event.preventDefault();
-    event.stopPropagation();
-    selectGalleryImage(selectedGalleryIndex + (event.key === 'ArrowRight' ? 1 : -1));
+  const cards = [...(gallery?.querySelectorAll('.gallery-flip') || [])];
+  const feature = $('#gallery-feature');
+  const items = [{"img":"assets/street-mercedes.webp","alt":"GTA IV hangulatú utcai kampányfotó egy autó előtt","title":"Kampányhangulat","desc":"Utcai, GTA IV hangulatú vizuál a kampányhoz.","kicker":"01 / FŐ KÉP"},{"img":"assets/campus-maroon.webp","alt":"Illusztrált portré bordó ingben a Gábor Dénes Egyetem előtt","title":"Egyetemi portré","desc":"Illusztrált portré egyetemi háttérrel.","kicker":"02 / PORTRÉ"},{"img":"assets/campus-purple.webp","alt":"Illusztrált portré Gábor Dénes szobránál","title":"Hallgatói üzenet","desc":"Személyes kampányillusztráció a szobornál.","kicker":"03 / ÜZENET"},{"img":"assets/campus-pattern.webp","alt":"Illusztrált portré mintás felsőben az egyetem mellett","title":"Új nézőpont","desc":"Kampánykép egy másik megjelenéssel.","kicker":"04 / KAMPÁNY"},{"img":"assets/campus-brown.webp","alt":"Illusztrált portré barna kabátban, egyetemi háttérrel","title":"Fókuszban a cél","desc":"Portré az egyetem környezetében.","kicker":"05 / PORTRÉ"}];
+  let activeFeatureIndex=0;
+  function updateFlip(card,flipped){
+    if(!card)return;
+    card.classList.toggle('is-flipped',flipped);
+    card.setAttribute('aria-pressed',String(flipped));
+    const index=Number(card.dataset.galleryIndex);
+    const title=items[index]?.title || 'Kampánykép';
+    card.setAttribute('aria-label',title+(flipped?' – visszafordítás a fotóra':' – fordítás az információs kártyára'));
+    card.querySelectorAll('.gallery-back').forEach(side=>side.setAttribute('aria-hidden',String(!flipped)));
+  }
+  cards.forEach(card=>{
+    card.addEventListener('click',()=>updateFlip(card,!card.classList.contains('is-flipped')));
   });
-  $('#modal-prev')?.addEventListener('click', () => changeStory(-1));
-  $('#modal-next')?.addEventListener('click', () => changeStory(1));
-  modalClose?.addEventListener('click', () => dialog?.close());
-  dialog?.addEventListener('click', event => {
-    if (event.target === dialog) dialog.close();
-    const link = event.target.closest?.('.story-link');
-    if (link && link.getAttribute('href')?.startsWith('#')) dialog.close();
+  function showMainImage(index){
+    if(!feature || !items.length)return;
+    activeFeatureIndex=(index+items.length)%items.length;
+    const item=items[activeFeatureIndex];
+    const front=feature.querySelector('.gallery-front img');
+    if(front){front.src=item.img;front.alt=item.alt;}
+    const number=feature.querySelector('.gallery-card-number');
+    if(number)number.textContent=String(activeFeatureIndex+1).padStart(2,'0')+' / 05';
+    const caption=feature.querySelector('.gallery-front-caption strong');
+    if(caption)caption.textContent=item.title;
+    const kicker=feature.querySelector('.gallery-back-kicker');
+    if(kicker)kicker.textContent=item.kicker;
+    const heading=feature.querySelector('.gallery-back-title');
+    if(heading)heading.textContent=item.title;
+    const detail=feature.querySelector('.gallery-back-description');
+    if(detail)detail.textContent=item.desc;
+    feature.dataset.galleryIndex=String(activeFeatureIndex);
+    updateFlip(feature,false);
+  }
+  $('#gallery-prev')?.addEventListener('click',()=>showMainImage(activeFeatureIndex-1));
+  $('#gallery-next')?.addEventListener('click',()=>showMainImage(activeFeatureIndex+1));
+  // Preserve the global ESC-to-home behavior unless an image is showing its back.
+  document.addEventListener('keydown',event=>{
+    if(event.key!=='Escape' || !$('#galeria')?.classList.contains('is-active'))return;
+    const flipped=cards.filter(card=>card.classList.contains('is-flipped'));
+    if(!flipped.length)return;
+    event.preventDefault();event.stopImmediatePropagation();
+    flipped.forEach(card=>updateFlip(card,false));
   });
-  dialog?.addEventListener('keydown', event => {
-    const tag = event.target?.tagName;
-    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
-    if (event.key === 'ArrowLeft') { event.preventDefault(); changeStory(-1); }
-    if (event.key === 'ArrowRight') { event.preventDefault(); changeStory(1); }
-  });
-  dialog?.addEventListener('close', () => {
-    modalImage.removeAttribute('src');
-    lastTrigger?.focus({ preventScroll: true });
-  });
-  selectGalleryImage(0);
+  showMainImage(0);
 
   const getUrl = value => {
     if (typeof value !== 'string' || !value.trim()) return '';

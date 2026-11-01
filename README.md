@@ -27,11 +27,11 @@ A `#programom` képernyő egy teljesen fekete, kártyák nélküli GTA IV Stats 
 
 Az adattábla a projekttervek bemutatására szolgál, **nem közöl kitalált statisztikát, megjelenési dátumot vagy eredményarányt**. A többi GTA-menüképernyő változatlan.
 
-## Galéria – kiemelt fő kép + 2×2-es képrács
+## Galéria – domináns fotók és átforduló információs kártyák
 
-A `#galeria` képernyőn az első, nagyméretű képet négy további kampánykép követi két sorban, két oszlopban. Az alsó képre kattintva az a nagy főképként jelenik meg; a nagy kép a meglévő részletes kép- és történetablakot nyitja meg. Bal/jobb gombokkal a főképek körbelapozhatók, a felugró ablakon belül is megmaradt a történetek közötti váltás. Az oldal továbbra is teljes képernyős menü; mobilon az adott galériaképernyő görgethető.
+A `#galeria` képernyőn az első, nagyméretű képet négy további kampánykép követi 2×2 elrendezésben. **Minden képre kattintva a fotó helyben, 3D-ben megfordul és kisebb információs kártyává zsugorodik.** Újabb kattintás a fotóhoz vezet vissza; a külön képmodal nem nyílik meg. A bal/jobb gomb a nagyméretű képet lapozza az öt fotó között. A többi almenü érintetlen; kisebb kijelzőn csak az adott galériaképernyő görgethető. A régi story-template-ek a kódban megmaradtak további tartalomfeltöltéshez.
 
-A galéria CSS-je külön `gallery-spotlight.css` fájlban található. A másik hat képernyő HTML-szerkezete nem változott.
+A galéria CSS-je külön `gallery-spotlight.css` fájlban található (V2). A másik hat képernyő HTML-szerkezete nem változott.
 
 ## Oldalszekciók
 
