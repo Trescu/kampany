@@ -87,9 +87,16 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   min-height:45px;border-top:1px solid #ffffff23;padding:7px 9px 0
 }
 .modal-nav-btn{
-  min-height:33px;padding:5px 14px;background:#202020;color:var(--cream);
-  border:1px solid #e0caaa8c;border-radius:5px;font-weight:750
+  box-sizing:border-box;
+  display:grid;place-items:center;
+  width:clamp(46px,8vw,58px);
+  min-width:clamp(46px,8vw,58px);
+  height:42px;min-height:42px;
+  flex:0 0 clamp(46px,8vw,58px);
+  padding:0!important;background:#202020;color:var(--cream);
+  border:1px solid #e0caaa8c;border-radius:5px
 }
+.modal-nav-btn svg{display:block;width:24px;height:24px;pointer-events:none}
 .modal-nav-btn:hover{background:var(--orange);color:#151515;border-color:var(--orange)}
 .nav-index{font-size:.8rem;font-weight:800;color:#b0aaa1;white-space:nowrap}
 .page-footer{
@@ -149,7 +156,7 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .modal-content{grid-template-rows:minmax(0,.93fr) minmax(0,1.07fr);gap:3px}
   .modal-story{padding:5px 8px 2px}
   .modal-navigation{gap:13px;min-height:39px;padding-top:4px}
-  .modal-nav-btn{min-height:30px;padding:4px 10px;font-size:.82rem}
+  .modal-nav-btn{width:48px;min-width:48px;height:40px;min-height:40px;flex-basis:48px}
   .page-footer{min-height:24px;padding:4px 9px}
   .page-footer span:first-child{font-size:.57rem}
   .key-tip{display:none}
