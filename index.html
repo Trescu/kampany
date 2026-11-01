@@ -26,6 +26,7 @@
 <link href="game-shell.css?v=1" rel="stylesheet"/>
 <link href="why-settings.css?v=1" rel="stylesheet"/>
 <link href="program-stats.css?v=1" rel="stylesheet"/>
+<link href="gallery-spotlight.css?v=1" rel="stylesheet"/>
 <script defer src="script.js"></script>
 <script defer src="game-shell.js?v=1"></script>
 <script defer src="why-settings.js?v=1"></script>
@@ -193,20 +194,62 @@
     </div>
   </div>
 </section>
-<section aria-labelledby="gallery-title" class="gallery section-border" id="galeria">
+<section aria-labelledby="gallery-title" class="gallery gallery-spotlight" id="galeria">
 <div class="container gallery-layout">
-<div class="gallery-intro">
-<div class="gallery-intro-copy"><img class="halloween-gallery-pumpkin halloween-only" alt="" aria-hidden="true" src="assets/jack-o-lantern.svg"/><p class="section-kicker">06 / KAMPÁNY</p><h2 class="brush-heading" id="gallery-title">Kampánygaléria</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Kattints a képekre a részletes nézethez.</p></div>
-<div class="gallery-controls"><button aria-label="Előző galériaképek" class="arrow-btn" id="gallery-prev" type="button">‹</button><button aria-label="Következő galériaképek" class="arrow-btn" id="gallery-next" type="button">›</button></div>
-</div>
-<div aria-label="Kampányképek – vízszintesen görgethető galéria" class="gallery-viewport" id="gallery-scroll" tabindex="0">
-<button aria-haspopup="dialog" aria-label="Kampányhangulat – kép és történet megnyitása" class="gallery-card" data-full="assets/street-mercedes.webp" data-story="story-campaign" type="button"><img alt="Utcai kampányfotó egy Mercedes előtt" loading="eager" src="assets/street-mercedes.webp"/><span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Lorem ipsum</strong><small>Lorem ipsum dolor sit amet.</small></span></button>
-<button aria-haspopup="dialog" aria-label="Az egyetemen – kép és történet megnyitása" class="gallery-card" data-full="assets/campus-maroon.webp" data-story="story-university" type="button"><img alt="Illusztrált portré az egyetem előtt, bordó ingben" loading="eager" src="assets/campus-maroon.webp"/><span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Dolor sit amet</strong><small>Lorem ipsum dolor sit amet.</small></span></button>
-<button aria-haspopup="dialog" aria-label="Ötletek és megoldások – kép és történet megnyitása" class="gallery-card" data-full="assets/campus-purple.webp" data-story="story-digital" type="button"><img alt="Illusztrált portré Gábor Dénes szobránál" loading="eager" src="assets/campus-purple.webp"/><span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Consectetur elit</strong><small>Lorem ipsum dolor sit amet.</small></span></button>
-<button aria-haspopup="dialog" aria-label="Gondolkodjunk együtt – kép és történet megnyitása" class="gallery-card" data-full="assets/campus-pattern.webp" data-story="story-dialogue" type="button"><img alt="Illusztrált portré mintás felsőben az egyetem mellett" loading="eager" src="assets/campus-pattern.webp"/><span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Nulla facilisi</strong><small>Lorem ipsum dolor sit amet.</small></span></button>
-<button aria-haspopup="dialog" aria-label="Fókuszban a cél – kép és történet megnyitása" class="gallery-card" data-full="assets/campus-brown.webp" data-story="story-priorities" type="button"><img alt="Illusztrált portré barna kabátban, egyetemi háttérrel" loading="eager" src="assets/campus-brown.webp"/><span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Vivamus sapien</strong><small>Lorem ipsum dolor sit amet.</small></span></button>
-</div>
-<p class="gallery-hint">A galériában görgethetsz vagy használhatod a nyilakat. A kártyák megnyitva szöveget is tartalmaznak.</p>
+  <div class="gallery-intro">
+    <div class="gallery-intro-copy">
+      <p class="section-kicker">06 / KAMPÁNY</p>
+      <h2 class="brush-heading" id="gallery-title">Kampánygaléria</h2>
+      <p>A kampány képekben. Válassz a négy alsó fotó közül, vagy nyisd meg a nagy képet a részletes nézethez.</p>
+    </div>
+    <div class="gallery-controls">
+      <button aria-label="Előző kampánykép" class="arrow-btn" id="gallery-prev" type="button">‹</button>
+      <button aria-label="Következő kampánykép" class="arrow-btn" id="gallery-next" type="button">›</button>
+    </div>
+    <p class="gallery-hint">Öt kampánykép egy képernyőn. A kiválasztott fotó felül nagy méretben jelenik meg.</p>
+  </div>
+  <div class="gallery-viewport" id="gallery-scroll" aria-label="Kampánygaléria – egy nagy kép és négy előnézet">
+    <button class="gallery-feature gallery-card" id="gallery-feature" type="button" aria-haspopup="dialog" aria-label="Kampányhangulat – kép és történet megnyitása"
+      data-gallery-index="0" data-full="assets/street-mercedes.webp" data-story="story-campaign"
+      data-gallery-title="Kampányhangulat" data-gallery-caption="GTA IV ihletésű kampányfotó">
+      <img id="gallery-feature-image" src="assets/street-mercedes.webp" alt="Utcai kampányfotó egy Mercedes előtt" loading="eager"/>
+      <span class="gallery-feature-text">
+        <strong id="gallery-feature-title"><i aria-hidden="true">»</i> Kampányhangulat</strong>
+        <small id="gallery-feature-caption">GTA IV ihletésű kampányfotó</small>
+      </span>
+      <span class="gallery-feature-open" aria-hidden="true">NAGYÍTÁS ↗</span>
+    </button>
+    <div class="gallery-grid" aria-label="Négy további kampánykép">
+      <button class="gallery-thumb gallery-card" type="button"
+        data-gallery-index="1" data-full="assets/campus-maroon.webp" data-story="story-university"
+        data-gallery-title="Egyetemi portré" data-gallery-caption="Portré a Gábor Dénes Egyetem előtt"
+        aria-label="Egyetemi portré – kiválasztás a nagy képhez">
+        <img src="assets/campus-maroon.webp" loading="lazy" alt="Illusztrált portré az egyetem előtt, bordó ingben"/>
+        <span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Egyetemi portré</strong><small>GDE / kampány</small></span>
+      </button>
+      <button class="gallery-thumb gallery-card" type="button"
+        data-gallery-index="2" data-full="assets/campus-purple.webp" data-story="story-digital"
+        data-gallery-title="Hallgatói üzenet" data-gallery-caption="Illusztrált kampánykép a Gábor Dénes-szobornál"
+        aria-label="Hallgatói üzenet – kiválasztás a nagy képhez">
+        <img src="assets/campus-purple.webp" loading="lazy" alt="Illusztrált portré Gábor Dénes szobránál"/>
+        <span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Hallgatói üzenet</strong><small>GDE / kampány</small></span>
+      </button>
+      <button class="gallery-thumb gallery-card" type="button"
+        data-gallery-index="3" data-full="assets/campus-pattern.webp" data-story="story-dialogue"
+        data-gallery-title="Új nézőpont" data-gallery-caption="Illusztrált kampánykép mintás felsőben"
+        aria-label="Új nézőpont – kiválasztás a nagy képhez">
+        <img src="assets/campus-pattern.webp" loading="lazy" alt="Illusztrált portré mintás felsőben az egyetem mellett"/>
+        <span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Új nézőpont</strong><small>GDE / kampány</small></span>
+      </button>
+      <button class="gallery-thumb gallery-card" type="button"
+        data-gallery-index="4" data-full="assets/campus-brown.webp" data-story="story-priorities"
+        data-gallery-title="Fókuszban a cél" data-gallery-caption="Illusztrált portré egyetemi háttérrel"
+        aria-label="Fókuszban a cél – kiválasztás a nagy képhez">
+        <img src="assets/campus-brown.webp" loading="lazy" alt="Illusztrált portré barna kabátban, egyetemi háttérrel"/>
+        <span class="gallery-card-text"><strong><i aria-hidden="true">»</i> Fókuszban a cél</strong><small>GDE / kampány</small></span>
+      </button>
+    </div>
+  </div>
 </div>
 </section>
 <section aria-labelledby="cta-title" class="cta-section" id="kapcsolat">

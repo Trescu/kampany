@@ -39,18 +39,43 @@
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
   window.addEventListener('resize', () => { if (window.innerWidth > 1120) closeMenu(); });
 
+  // Five original gallery assets; one large preview and four selectable thumbnails.
   const gallery = $('#gallery-scroll');
   const cards = [...(gallery?.querySelectorAll('.gallery-card') || [])];
-  const scrollGallery = direction => {
-    if (!gallery) return;
-    const cardWidth = cards[0]?.getBoundingClientRect().width || 280;
-    const gap = Number.parseFloat(window.getComputedStyle(gallery).columnGap) || 16;
-    gallery.scrollBy({ left: direction * (cardWidth + gap), behavior: 'smooth' });
+  const featured = $('#gallery-feature');
+  const featureImage = $('#gallery-feature-image');
+  const featureTitle = $('#gallery-feature-title');
+  const featureCaption = $('#gallery-feature-caption');
+  const galleryItems = cards.map(card => ({
+    full: card.dataset.full || '',
+    story: card.dataset.story || '',
+    title: card.dataset.galleryTitle || card.querySelector('strong')?.textContent?.trim() || 'Kampánykép',
+    caption: card.dataset.galleryCaption || card.querySelector('small')?.textContent?.trim() || '',
+    alt: card.querySelector('img')?.alt || 'Kampánykép'
+  }));
+  let selectedGalleryIndex = 0;
+  const selectGalleryImage = index => {
+    if (!galleryItems.length || !featured || !featureImage) return;
+    selectedGalleryIndex = (index + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[selectedGalleryIndex];
+    featureImage.src = item.full;
+    featureImage.alt = item.alt;
+    featured.dataset.full = item.full;
+    featured.dataset.story = item.story;
+    featured.dataset.galleryIndex = String(selectedGalleryIndex);
+    featured.setAttribute('aria-label', item.title + ' – kép és történet megnyitása');
+    if (featureTitle) featureTitle.textContent = '» ' + item.title;
+    if (featureCaption) featureCaption.textContent = item.caption;
+    cards.forEach((card, i) => {
+      const current = i === selectedGalleryIndex;
+      card.classList.toggle('is-current', current);
+      if (i > 0) card.setAttribute('aria-pressed', String(current));
+    });
   };
-  $('#gallery-prev')?.addEventListener('click', () => scrollGallery(-1));
-  $('#gallery-next')?.addEventListener('click', () => scrollGallery(1));
+  $('#gallery-prev')?.addEventListener('click', () => selectGalleryImage(selectedGalleryIndex - 1));
+  $('#gallery-next')?.addEventListener('click', () => selectGalleryImage(selectedGalleryIndex + 1));
 
-  // Accessible gallery dialog: image + a readable story, not just an enlarged image.
+  // Existing full-screen image/story dialog retained.
   const dialog = $('#image-modal');
   const modalImage = $('#modal-image');
   const modalCaption = $('#modal-caption');
@@ -58,38 +83,47 @@
   const modalClose = $('#modal-close');
   let activeCardIndex = 0;
   let lastTrigger = null;
-
   const populateStory = index => {
-    const card = cards[index];
-    if (!card || !modalImage || !modalStory) return;
-    activeCardIndex = index;
-    modalImage.src = card.dataset.full;
-    modalImage.alt = card.querySelector('img')?.alt || 'Kampánykép';
-    modalCaption.textContent = card.querySelector('strong')?.textContent?.trim().replace(/^»\s*/, '') || 'Kampánytörténet';
-    const template = document.getElementById(card.dataset.story);
+    if (!galleryItems.length || !modalImage || !modalStory) return;
+    activeCardIndex = (index + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[activeCardIndex];
+    modalImage.src = item.full;
+    modalImage.alt = item.alt;
+    modalCaption.textContent = item.title;
+    const template = document.getElementById(item.story);
     modalStory.replaceChildren(template?.content.cloneNode(true) || document.createTextNode('A történet még nincs megadva.'));
     dialog?.scrollTo(0, 0);
     modalStory.scrollTop = 0;
-    card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
   };
-  const openStory = index => {
+  const openStory = (index, trigger) => {
+    if (!galleryItems.length) return;
+    const safeIndex = (index + galleryItems.length) % galleryItems.length;
     if (!dialog?.showModal) {
-      window.open(cards[index].dataset.full, '_blank', 'noopener');
+      window.open(galleryItems[safeIndex].full, '_blank', 'noopener');
       return;
     }
-    lastTrigger = cards[index];
-    populateStory(index);
+    lastTrigger = trigger || featured;
+    populateStory(safeIndex);
     dialog.showModal();
     modalClose?.focus();
   };
-  const changeStory = direction => populateStory((activeCardIndex + direction + cards.length) % cards.length);
-  cards.forEach((card, index) => card.addEventListener('click', () => openStory(index)));
+  const changeStory = direction => populateStory(activeCardIndex + direction);
+  featured?.addEventListener('click', () => openStory(selectedGalleryIndex, featured));
+  cards.slice(1).forEach((card, i) => card.addEventListener('click', () => {
+    selectGalleryImage(i + 1);
+  }));
+  gallery?.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    if (!event.target.closest('.gallery-card')) return;
+    event.preventDefault();
+    event.stopPropagation();
+    selectGalleryImage(selectedGalleryIndex + (event.key === 'ArrowRight' ? 1 : -1));
+  });
   $('#modal-prev')?.addEventListener('click', () => changeStory(-1));
   $('#modal-next')?.addEventListener('click', () => changeStory(1));
   modalClose?.addEventListener('click', () => dialog?.close());
   dialog?.addEventListener('click', event => {
     if (event.target === dialog) dialog.close();
-    // In-page links inside the story should navigate after the modal closes.
     const link = event.target.closest?.('.story-link');
     if (link && link.getAttribute('href')?.startsWith('#')) dialog.close();
   });
@@ -103,6 +137,7 @@
     modalImage.removeAttribute('src');
     lastTrigger?.focus({ preventScroll: true });
   });
+  selectGalleryImage(0);
 
   const getUrl = value => {
     if (typeof value !== 'string' || !value.trim()) return '';
