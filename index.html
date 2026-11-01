@@ -24,8 +24,10 @@
 <link href="sections.css" rel="stylesheet"/>
 <link href="gta.css?v=2" rel="stylesheet"/>
 <link href="game-shell.css?v=1" rel="stylesheet"/>
+<link href="why-settings.css?v=1" rel="stylesheet"/>
 <script defer src="script.js"></script>
 <script defer src="game-shell.js?v=1"></script>
+<script defer src="why-settings.js?v=1"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Ugrás a tartalomhoz</a>
@@ -71,21 +73,43 @@
     <div><span><kbd>ENTER</kbd> Kiválasztás</span><span><kbd>ESC</kbd> Vissza</span></div>
   </div>
 </section>
-<section aria-labelledby="why-title" class="why section-border" id="miert-en">
-<div class="container why-grid">
-<div class="section-lead">
-<p class="section-kicker">01 / MIÉRT INDULOK?</p>
-<h2 class="brush-heading" id="why-title">Miért indulok?</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus massa nec felis tristique, at dictum ligula tempor.</p>
-<a class="text-link section-more" href="#programom">A terveim részletesebben <span aria-hidden="true">↗</span></a>
-</div>
-<div class="values-grid">
-<article class="value-card"><span aria-hidden="true" class="icon-tile"><svg viewbox="0 0 32 32"><path d="m5 12 7-6 5 2 3-1 7 5-3 3-4-2-7 9-3-1-1-3-3-1z"></path><path d="m13 13 9 8M10 16l8 8M16 10l-4 4M22 17l4-3"></path></svg></span><div><h3>Lorem ipsum dolor</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis augue at urna vulputate, nec dapibus urna rutrum.</p></div></article>
-<article class="value-card"><span aria-hidden="true" class="icon-tile"><svg viewbox="0 0 32 32"><path d="M6 6h20v15H14l-7 5v-5H6z"></path><path d="M11 14h1m4 0h1m4 0h1" stroke-width="3"></path></svg></span><div><h3>Dolor sit amet</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis augue at urna vulputate, nec dapibus urna rutrum.</p></div></article>
-<article class="value-card"><span aria-hidden="true" class="icon-tile"><svg viewbox="0 0 32 32"><rect height="16" rx="2" width="22" x="5" y="6"></rect><path d="M2 26h28M12 26l1-4m6 4-1-4"></path></svg></span><div><h3>Consectetur adipiscing</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis augue at urna vulputate, nec dapibus urna rutrum.</p></div></article>
-<article class="value-card"><span aria-hidden="true" class="icon-tile"><svg viewbox="0 0 32 32"><circle cx="16" cy="10" r="4"></circle><circle cx="5" cy="13" r="3"></circle><circle cx="27" cy="13" r="3"></circle><path d="M7 26v-4c0-4 4-6 9-6s9 2 9 6v4zM1 25v-4c0-3 2-5 6-5m18 0c4 0 6 2 6 5v4"></path></svg></span><div><h3>Nulla facilisi</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis augue at urna vulputate, nec dapibus urna rutrum.</p></div></article>
-</div>
-</div>
+<section class="why-settings" id="miert-en" aria-labelledby="why-title">
+  <div class="why-stage-art" aria-hidden="true"></div>
+  <div class="why-settings-layout">
+    <div class="why-controls">
+      <h2 id="why-title">Miért indulok?</h2>
+      <div class="why-choice-list" role="group" aria-label="Motivációim – válassz témát">
+        <button class="why-choice is-selected" data-why-option="0" type="button" aria-pressed="true">
+          <span>Hallgatói érdekképviselet</span><span class="why-choice-value"><b aria-hidden="true">◀</b> Be <b aria-hidden="true">▶</b></span>
+        </button>
+        <button class="why-choice" data-why-option="1" type="button" aria-pressed="false">
+          <span>Digitális fejlesztések</span><span class="why-choice-value"><b aria-hidden="true">◀</b> Be <b aria-hidden="true">▶</b></span>
+        </button>
+        <button class="why-choice" data-why-option="2" type="button" aria-pressed="false">
+          <span>Átlátható kommunikáció</span><span class="why-choice-value"><b aria-hidden="true">◀</b> Be <b aria-hidden="true">▶</b></span>
+        </button>
+        <button class="why-choice" data-why-option="3" type="button" aria-pressed="false">
+          <span>Aktív közösség</span><span class="why-choice-value"><b aria-hidden="true">◀</b> Be <b aria-hidden="true">▶</b></span>
+        </button>
+      </div>
+      <div class="why-settings-group why-gauges" aria-label="Kampányprioritások – illusztratív értékek, nem statisztikai mérőszámok">
+        <div class="why-meter-row"><span>Hallgatói fókusz</span><span class="why-meter-track"><span></span></span><span class="why-meter-number">100</span></div>
+        <div class="why-meter-row"><span>Átláthatóság</span><span class="why-meter-track"><span></span></span><span class="why-meter-number">100</span></div>
+        <div class="why-meter-row"><span>Elérhetőség</span><span class="why-meter-track"><span></span></span><span class="why-meter-number">100</span></div>
+        <div class="why-meter-row"><span>Fejleszthetőség</span><span class="why-meter-track"><span></span></span><span class="why-meter-number">100</span></div>
+      </div>
+      <dl class="why-settings-group why-yes-list">
+        <div><dt>Tapasztalatra építés</dt><dd>Igen</dd></div>
+        <div><dt>Elhivatottság</dt><dd>Igen</dd></div>
+        <div><dt>Program összhangja</dt><dd>Igen</dd></div>
+        <div><dt>Eredményorientáltság</dt><dd>Igen</dd></div>
+      </dl>
+      <a class="why-program-link" href="#programom">A programom részletesebben <span aria-hidden="true">▶</span></a>
+    </div>
+    <aside class="why-description" aria-live="polite" aria-atomic="true">
+      <p id="why-description-text">A hallgatók érdekeinek képviselete a döntéshozatalban, valódi hallgatói visszajelzések alapján.</p>
+    </aside>
+  </div>
 </section>
 <div aria-hidden="true" class="halloween-break halloween-only"><span class="halloween-break-line"></span><img src="assets/jack-o-lantern.svg" alt=""><span class="halloween-break-word">TRICK OR TREAT</span><img src="assets/ghost-white.svg" alt=""><span class="halloween-break-line"></span></div>
 <section aria-labelledby="program-title" class="program section-border" id="programom">

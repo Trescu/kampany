@@ -13,6 +13,14 @@ Statikus, reszponzív HTML/CSS/JavaScript landing page, build-eszköz és küls�
 - **Halloween kézi kapcsoló:** alapállapot a GTA-stílusú normál oldal; kattintásra Halloween-dekoráció, majd visszaváltás. A választás böngészőnként megmarad. A szellemvadász játék **még nincs implementálva**, külön fejlesztési lépés.
 - A Hero jelenleg a repositoryban korábban meglévő `assets/campus-brown.webp` kampányképet használja (mobilon `assets/campus-maroon.webp`). A korábbi, jóváhagyott menü-mockup pontos portréjának új képi exportja **még hátravan**.
 
+## „Miért indulok?” – GTA IV-beállításmenü
+
+A `#miert-en` képernyő már nem a régi kártyarácsot használja: a bal oldalon négy választható kampánymotiváció, illusztratív prioritássávok és menüopciók, a jobb felső részen pedig az aktuálisan kiválasztott motiváció rövid leírása látszik. A teljes háttérben a már meglévő `assets/campus-purple.webp` (Gábor Dénes-szobor előtti karakterportré) szerepel.
+
+A menüpontok egérrel, érintéssel és a fókuszált listán fel/le vagy jobbra/balra nyílbillentyűkkel válthatók; Home/End az első/utolsó opcióra lép. A `100` értékek kizárólag **grafikus kampányprioritások**, nem mérési eredmények. A menüpontok rövid szövegeit a `why-settings.js` tartalmazza, a felület stílusát a `why-settings.css`.
+
+A GTA IV rendőrségi adatlap referencia az egyéni bemutatkozó képernyőhöz tartozik, és külön iterációban kerül megtervezésre.
+
 ## Oldalszekciók
 
 1. Főoldal / Hero – `#fooldal`
