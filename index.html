@@ -23,8 +23,9 @@
 <link href="halloween-decor.css" rel="stylesheet"/>
 <link href="sections.css" rel="stylesheet"/>
 <link href="gta.css?v=2" rel="stylesheet"/>
+<link href="game-shell.css?v=1" rel="stylesheet"/>
 <script defer src="script.js"></script>
-<script defer src="gta.js?v=2"></script>
+<script defer src="game-shell.js?v=1"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Ugrás a tartalomhoz</a>
@@ -133,19 +134,39 @@
 </section>
 
 <!-- Team cards: person data comes from config.js; each button opens a full profile dialog. -->
-<section class="team section-border" id="csapatom" aria-labelledby="team-title">
-  <div class="container">
-    <div class="section-heading-row team-heading-row">
-      <div>
-        <p class="section-kicker">05 / AKIK VELEM DOLGOZNAK</p>
-        <h2 class="brush-heading" id="team-title">Csapatom</h2>
+<section class="team game-screen" id="csapatom" aria-labelledby="team-title">
+  <div class="love-browser" aria-label="Csapatom – retro böngésző">
+    <div class="love-toolbar">
+      <div class="love-address" aria-label="Kitalált játékbeli webcím"><span class="love-dot"></span><span>www.hok-meet.local / csapatom</span></div>
+      <div class="love-browser-buttons">
+        <button type="button" id="love-prev" title="Előző menü" aria-label="Előző menü">◀</button>
+        <button type="button" id="love-next" title="Következő menü" aria-label="Következő menü">▶</button>
+        <button type="button" id="love-home" title="Főoldal" aria-label="Vissza a főoldalra">⌂</button>
       </div>
-      <p class="section-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius ipsum non elit luctus volutpat.</p>
     </div>
-    <div class="team-grid" id="team-grid" aria-label="A kampánycsapat tagjai"></div>
-    <p class="section-editor-note">A profilok mintaadatokat tartalmaznak. A neveket, fotókat és bemutatkozásokat később lehet megadni.</p>
+    <div class="love-page">
+      <div class="love-banner">
+        <div class="love-logo"><span>HÖK</span><em>meet</em></div>
+        <div class="love-banner-copy"><h2 id="team-title">Ismerd meg a csapatom!</h2><p>Nem társkereső, hanem egy közös ügy: hallgatók a hallgatókért.</p></div>
+      </div>
+      <div class="love-content">
+        <aside class="love-aside">
+          <div class="love-area-title">FIND <em>team</em></div>
+          <h3>ISMERKEDJ MEG VELÜNK!</h3>
+          <p>A kampány mögött álló emberek. Válassz egy profilt a részletes bemutatkozáshoz.</p>
+          <div class="love-category-label">KAMPÁNY / PROFILOK</div>
+          <a href="#programom" class="love-pill">Programunk ›</a>
+          <a href="#megjelenesek" class="love-pill">Eddigi munkánk ›</a>
+          <p class="love-disclaimer">A csapatprofilok jelenleg helykitöltő adatokkal szerepelnek; a végleges neveket és fényképeket később állítjuk be.</p>
+        </aside>
+        <div class="love-results">
+          <div class="love-area-title">TRUE <em>team</em><span> / VÁLASSZ PROFILT</span></div>
+          <div class="love-intro-row"><strong>Tagjaink</strong><span>Kattints egy kártyára a részletekért</span></div>
+          <div id="team-grid" class="team-grid love-team-grid" aria-label="A kampánycsapat tagjai"></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <img class="team-halloween-ghost halloween-only" src="assets/ghost-white.svg" alt="" aria-hidden="true" loading="lazy"/>
 </section>
 <section aria-labelledby="gallery-title" class="gallery section-border" id="galeria">
 <div class="container gallery-layout">
@@ -169,6 +190,10 @@
 <div class="container cta-layout"><div><p class="section-kicker">07 / A TE HANGOD IS SZÁMÍT</p><h2 id="cta-title">Lorem ipsum.<br/>Dolor sit amet!</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Praesent commodo ligula sed quam lacinia.</p></div><div class="cta-actions"><button class="btn btn-cream" id="share-btn" type="button">Oszd meg az oldalt <span aria-hidden="true">↗</span></button><button class="btn btn-dark" id="contact-btn" type="button">Írj nekem <span aria-hidden="true">›</span></button><a class="btn btn-outline optional-link" hidden="" href="#" id="vote-link" rel="noopener noreferrer" target="_blank">Hivatalos szavazási információk <span aria-hidden="true">↗</span></a><div aria-label="Kampány közösségi oldalai" class="social-links" id="social-links"></div><p aria-live="polite" class="contact-notice" id="contact-notice" role="status"></p></div></div>
 </section>
 </main>
+<div class="game-footer" id="game-footer">
+ <span class="game-footer-label">GDE / HALLGATÓI KAMPÁNY <span class="game-footer-sep">/</span> <span id="game-screen-label">FŐOLDAL</span></span>
+ <div class="game-footer-actions"><span><kbd>←</kbd><kbd>→</kbd> MENÜ</span><span><kbd>ENTER</kbd> KIVÁLASZTÁS</span><button type="button" id="game-back"><kbd>ESC</kbd> VISSZA</button></div>
+</div>
 <footer class="site-footer"><div class="container footer-layout"><a class="footer-brand" href="#top"><span aria-hidden="true" class="footer-symbol">✦</span><span>GÁBOR DÉNES EGYETEM</span></a><span aria-hidden="true" class="footer-separator"></span><span>Ricsi a HÖK-ért</span><span class="footer-note">Független hallgatói kampányoldal, nem hivatalos egyetemi webhely.</span><a aria-label="Vissza az oldal tetejére" class="footer-up" href="#top">↑</a></div></footer>
 <dialog aria-labelledby="modal-caption" class="image-modal" id="image-modal">
 <div class="modal-top"><span id="modal-caption"></span><button aria-label="Ablak bezárása" class="modal-close" id="modal-close" type="button">✕</button></div>
