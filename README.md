@@ -21,6 +21,12 @@ A menüpontok egérrel, érintéssel és a fókuszált listán fel/le vagy jobbr
 
 A GTA IV rendőrségi adatlap referencia az egyéni bemutatkozó képernyőhöz tartozik, és külön iterációban kerül megtervezésre.
 
+## „Programom” – GTA IV Stats-stílusú menü
+
+A `#programom` képernyő egy teljesen fekete, kártyák nélküli GTA IV Stats menü: bal oldalon sárga kijelöléssel 6 téma, jobb oldalon váltakozó sötétszürke-fekete soros kéthasábos adattábla. Az aktív témához tartozó sorok kattintásra vagy fókuszált menüben fel/le, Home/End nyílbillentyűvel azonnal változnak. A kezelőfelület a `program-stats.css` és `program-stats.js` fájlokban, elkülönítve szerepel.
+
+Az adattábla a projekttervek bemutatására szolgál, **nem közöl kitalált statisztikát, megjelenési dátumot vagy eredményarányt**. A többi GTA-menüképernyő változatlan.
+
 ## Oldalszekciók
 
 1. Főoldal / Hero – `#fooldal`

@@ -25,9 +25,11 @@
 <link href="gta.css?v=2" rel="stylesheet"/>
 <link href="game-shell.css?v=1" rel="stylesheet"/>
 <link href="why-settings.css?v=1" rel="stylesheet"/>
+<link href="program-stats.css?v=1" rel="stylesheet"/>
 <script defer src="script.js"></script>
 <script defer src="game-shell.js?v=1"></script>
 <script defer src="why-settings.js?v=1"></script>
+<script defer src="program-stats.js?v=1"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Ugrás a tartalomhoz</a>
@@ -112,33 +114,32 @@
   </div>
 </section>
 <div aria-hidden="true" class="halloween-break halloween-only"><span class="halloween-break-line"></span><img src="assets/jack-o-lantern.svg" alt=""><span class="halloween-break-word">TRICK OR TREAT</span><img src="assets/ghost-white.svg" alt=""><span class="halloween-break-line"></span></div>
-<section aria-labelledby="program-title" class="program section-border" id="programom">
-<div class="container">
-<div class="section-heading-row">
-<div><p class="section-kicker">02 / PROGRAMOM</p><h2 class="brush-heading" id="program-title">Programom</h2></div>
-<p class="section-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada, risus nec posuere dignissim, mi augue mollis metus, et vulputate enim quam non purus.</p>
-</div>
-<div class="program-projects">
-<article class="project-feature"><img class="halloween-feature-web halloween-only" alt="" aria-hidden="true" src="assets/spiderweb-bright.svg"/><img class="halloween-feature-ghost halloween-only" alt="" aria-hidden="true" src="assets/ghost-white.svg"/>
-<div class="project-feature-copy">
-<p class="project-overline"><span class="project-dot"></span> 01 / KIEMELT PROJEKT</p>
-<h3>eHÖK<span aria-hidden="true" class="title-star">✦</span></h3>
-<p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis urna maximus, dictum nisi at, mollis orci. Sed vulputate, justo at mattis semper, lectus libero gravida libero, ut lacinia erat sapien in risus.</p>
-<div class="project-tags"><span>Lorem ipsum</span><span>Dolor sit</span><span>Amet elit</span></div>
-<a class="text-link" href="#kapcsolat">Kapcsolat <span aria-hidden="true">↗</span></a>
-</div>
-<div aria-hidden="true" class="project-feature-art">
-<div class="preview-top"><span class="preview-lights"><i></i><i></i><i></i></span><span>eHÖK / WIREFRAME</span><span>✳</span></div>
-<div class="preview-layout"><div class="preview-sidebar"><span class="preview-square"></span><i></i><i></i><i></i><i></i></div><div class="preview-main"><div class="preview-banner"><b>Lorem ipsum</b><span>Dolor sit amet</span></div><div class="preview-line"><span></span><div><b>Lorem ipsum</b><small>Consectetur adipiscing elit</small></div><em>01</em></div><div class="preview-line"><span></span><div><b>Dolor sit amet</b><small>Praesent dictum finibus</small></div><em>02</em></div><div class="preview-line"><span></span><div><b>Adipiscing elit</b><small>Integer eu faucibus</small></div><em>03</em></div></div></div>
-<span class="preview-corner">UI · KONCEPCIÓ</span>
-</div>
-</article>
-<div class="secondary-projects">
-<article class="project-small"><div class="project-small-number">02 <span aria-hidden="true">↗</span></div><div><p class="project-overline">KIEGÉSZÍTŐ PROJEKT</p><h3>Neptun app</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor magna sapien, sit amet pulvinar velit volutpat non.</p></div></article>
-<article class="project-small project-secret"><div class="project-small-number">03 <span aria-hidden="true">✳</span></div><div><p class="project-overline">HAMAROSAN</p><h3>???</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tincidunt odio, quis pretium ipsum.</p></div><span aria-hidden="true" class="secret-stamp">COMING SOON</span></article>
-</div>
-</div>
-</div>
+<section class="program program-stats" id="programom" aria-labelledby="program-title">
+  <h2 class="sr-only" id="program-title">Programom</h2>
+  <div class="program-stats-layout">
+    <nav class="program-stats-sidebar" aria-label="Programom kategóriái">
+      <button class="program-stats-option is-selected" data-program-stats="ehok" type="button" aria-pressed="true">eHÖK</button>
+      <button class="program-stats-option" data-program-stats="neptun" type="button" aria-pressed="false">Neptun app</button>
+      <button class="program-stats-option" data-program-stats="tanulas" type="button" aria-pressed="false">Tanulást segítő eszközök</button>
+      <button class="program-stats-option" data-program-stats="ugyintezes" type="button" aria-pressed="false">Hallgatói ügyintézés</button>
+      <button class="program-stats-option" data-program-stats="digital" type="button" aria-pressed="false">Digitalizáció</button>
+      <button class="program-stats-option" data-program-stats="kozosseg" type="button" aria-pressed="false">Közösségi programok</button>
+    </nav>
+    <div class="program-stats-right" aria-live="polite" aria-atomic="true" aria-label="Kiválasztott program részletei">
+      <div class="program-stats-table" id="program-stats-table">
+        <div class="program-stats-row"><span>Fő projekt</span><span>eHÖK</span></div>
+        <div class="program-stats-row"><span>Állapot</span><span>Tervezés alatt</span></div>
+        <div class="program-stats-row"><span>Cél</span><span>Digitális hallgatói önkormányzati platform</span></div>
+        <div class="program-stats-row"><span>Kommunikáció</span><span>Hallgatói visszajelzések</span></div>
+        <div class="program-stats-row"><span>Ügyintézés</span><span>Digitális támogatás</span></div>
+        <div class="program-stats-row"><span>Átláthatóság</span><span>Kiemelt cél</span></div>
+        <div class="program-stats-row"><span>Közösségi kapcsolódás</span><span>Fontos</span></div>
+        <div class="program-stats-row"><span>Hallgatói élmény</span><span>Fejlesztendő</span></div>
+        <div class="program-stats-row"><span>Prioritás</span><span>Magas</span></div>
+        <div class="program-stats-row"><span>Fókusz</span><span>GDE hallgatók</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- GDE/community mentions: cards and links are populated from config.js. -->

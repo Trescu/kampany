@@ -1,0 +1,81 @@
+/* Programom: GTA IV "Stats" screen, approved reference, no illustrations or cards */
+#main > section#programom.program-stats {
+  padding:0!important;
+  background:#000!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  color:#c5c5c5;
+  font-family:Arial,"Arial Narrow",sans-serif;
+}
+#main > section#programom.program-stats::before{content:none!important;display:none!important}
+#programom .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#programom .program-stats-layout{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(270px,22.5%) minmax(0,1fr);
+  column-gap:clamp(24px,3.2vw,60px);
+  width:100%;min-height:100%;
+  padding:clamp(19px,3.25vh,43px) clamp(26px,4.5vw,90px) 24px;
+}
+#programom .program-stats-sidebar{
+  display:flex;flex-direction:column;align-items:stretch;
+  gap:1px;min-width:0;
+}
+#programom .program-stats-option{
+  border:0;border-radius:0;
+  background:none!important;
+  color:#a3a3a3!important;
+  text-align:left;cursor:pointer;
+  padding:4px 3px 4px 1px;
+  min-height:clamp(31px,4.05vh,42px);
+  font:800 clamp(1.12rem,1.65vw,1.7rem)/1.13 "Arial Narrow",Arial,Helvetica,sans-serif;
+  letter-spacing:-.033em;
+  text-shadow:0 1px 2px #000;
+}
+#programom .program-stats-option:hover,
+#programom .program-stats-option.is-selected{
+  color:#e5a51f!important;
+}
+#programom .program-stats-option:focus-visible{outline:2px solid #e5a51f;outline-offset:3px}
+#programom .program-stats-right{min-width:0;align-self:start}
+#programom .program-stats-table{width:100%}
+#programom .program-stats-row{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);
+  align-items:center;
+  gap:10px;
+  min-height:clamp(32px,4.14vh,42px);
+  padding:2px 8px;
+  margin:0;
+  color:#b5b5b5;
+  background:#080808;
+  font:800 clamp(1rem,1.47vw,1.48rem)/1.08 "Arial Narrow",Arial,Helvetica,sans-serif;
+  letter-spacing:-.03em;
+  text-shadow:0 1px 2px #000;
+}
+#programom .program-stats-row:nth-child(odd){background:#1e1e1e}
+#programom .program-stats-row>span{min-width:0;overflow-wrap:anywhere}
+#programom .program-stats-row>span:last-child{
+  text-align:right;color:#d1d1d1;
+}
+@media(max-height:750px) and (min-width:841px){
+  #programom .program-stats-layout{padding-top:16px;padding-bottom:12px}
+  #programom .program-stats-option{min-height:29px;font-size:clamp(1rem,1.5vw,1.4rem)}
+  #programom .program-stats-row{min-height:30px;font-size:clamp(.93rem,1.35vw,1.3rem)}
+}
+@media(max-width:900px){
+  #programom .program-stats-layout{grid-template-columns:minmax(194px,30%) minmax(0,1fr);column-gap:18px;padding:22px 24px}
+  #programom .program-stats-option{font-size:clamp(.98rem,2.4vw,1.3rem)}
+  #programom .program-stats-row{font-size:clamp(.94rem,1.8vw,1.18rem)}
+}
+@media(max-width:620px){
+  #programom .program-stats-layout{display:flex;flex-direction:column;gap:15px;padding:13px 12px 20px}
+  #programom .program-stats-sidebar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 12px}
+  #programom .program-stats-option{font-size:clamp(.98rem,3.65vw,1.2rem);min-height:31px}
+  #programom .program-stats-right{width:100%}
+  #programom .program-stats-row{font-size:clamp(.87rem,3.3vw,1.06rem);min-height:34px;grid-template-columns:minmax(0, .95fr) minmax(0,1.25fr)}
+}
+@media(max-width:370px){
+ #programom .program-stats-layout{padding-left:8px;padding-right:8px}
+ #programom .program-stats-sidebar{gap:3px 5px}
+ #programom .program-stats-option{font-size:.92rem}
+}
