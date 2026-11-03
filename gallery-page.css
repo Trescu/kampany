@@ -11,3 +11,18 @@
 @media(max-width:960px){.header{grid-template-columns:1fr auto;min-height:58px}.descriptor{display:none}.chapter{flex-basis:min(70vw,440px)}.hint{display:none}.arrows{margin-left:auto}.chapter{--offset:25px}}
 @media(max-width:620px){.header{min-height:55px;padding:12px 17px}.brand{font-size:20px}#topics-open{font-size:11px}.rail{gap:18px;padding:13px 16px 16px;scroll-snap-type:x mandatory}.chapter{flex:0 0 calc(100vw - 42px);--offset:0px;grid-template-areas:"head" "photo" "body";gap:13px;scroll-snap-align:start;padding:6px 0 26px}.chapter h2{font-size:clamp(24px,7vw,31px)}.eyebrow{margin-bottom:10px}.chapter-photo img,.chapter-2 .chapter-photo img,.chapter-3 .chapter-photo img,.chapter-5 .chapter-photo img{max-height:none}.chapter-text{font-size:14px;line-height:1.48}.end-cap{flex-basis:24px}.timeline{min-height:110px;padding:10px 16px}.markers{gap:7px;margin-top:9px}.marker{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding-top:6px}.marker.active{padding-top:5px}.marker img{width:100%;max-width:62px;height:30px}.marker small{display:none}.marker span{font-size:9px}.progress{margin-top:8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+/* Repeating icon pattern and favicon-colored backdrop for the five stories. */
+.chapter{
+  background-color:#dfab3a;
+  background-image:linear-gradient(rgba(223,171,58,.88),rgba(223,171,58,.88)),url("assets/table-tennis-svgrepo-com.svg");
+  background-repeat:no-repeat,repeat;
+  background-size:100% 100%,64px 64px;
+  background-position:0 0,0 0;
+  padding-left:clamp(15px,1.4vw,22px);
+  padding-right:clamp(15px,1.4vw,22px);
+  color:#18150f;
+}
+.chapter h2{color:#18150f}
+.chapter .eyebrow{color:#59441d}
+.chapter-text{color:#252016}
+.chapter-text h4{color:#18150f}
