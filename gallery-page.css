@@ -159,3 +159,9 @@
 .profile-portrait{height:clamp(205px,34dvh,340px)}
 .profile-portrait img{height:100%;width:auto;max-width:100%;object-fit:contain;object-position:center bottom}
 }
+
+/* Fill the first campaign picture across its entire desktop column. */
+@media (min-width:621px){
+ .chapter-1 .chapter-photo{overflow:hidden}
+ .chapter-1 .chapter-photo img{object-fit:cover;object-position:center}
+}
