@@ -14,9 +14,9 @@
 /* Repeating icon pattern and favicon-colored backdrop for the five stories. */
 .chapter{
   background-color:#dfab3a;
-  background-image:linear-gradient(rgba(223,171,58,.88),rgba(223,171,58,.88)),url("assets/table-tennis-svgrepo-com.svg");
+  background-image:linear-gradient(rgba(223,171,58,.88),rgba(223,171,58,.88)),url("assets/table-tennis-svgrepo-com.svg?v=2");
   background-repeat:no-repeat,repeat;
-  background-size:100% 100%,64px 64px;
+  background-size:100% 100%,88px 88px;
   background-position:0 0,0 0;
   padding-left:clamp(15px,1.4vw,22px);
   padding-right:clamp(15px,1.4vw,22px);
